@@ -3,101 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рейтинг Телеграм Каналів</title>
+    <title>UA Lottery - Мій Проєкт</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
+            background-color: #111827;
+            color: white;
+            text-align: center;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin: 0;
         }
         .container {
-            width: 100%;
             max-width: 800px;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: auto;
         }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        /* Стиль для таблиці (рейтингу) */
-        .rating-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-        }
-        .rating-table th, .rating-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        .rating-table th {
-            background-color: #673ab7;
-            color: white;
-        }
-        /* Стиль для блоку з анкетою */
-        .form-section {
-            margin-top: 40px;
-            border-top: 2px solid #eee;
-            padding-top: 20px;
-        }
-        .form-header {
-            background-color: #673ab7;
-            color: white;
+        h1 { color: #3b82f6; }
+        .widget-section {
+            margin: 30px 0;
             padding: 15px;
-            border-radius: 8px 8px 0 0;
-            text-align: center;
+            background: #1f2937;
+            border-radius: 12px;
         }
         iframe {
-            border: 1px solid #ddd;
-            border-top: none;
-            border-radius: 0 0 8px 8px;
+            border: none;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>🏆 Топ Телеграм Каналів</h1>
+    <div class="container">
+        <h1>Вітаємо в UA Lottery!</h1>
+        <p>Налаштована форма для подачі ваших каналів:</p>
 
-    <table class="rating-table">
-        <thead>
-            <tr>
-                <th>Місце</th>
-                <th>Назва каналу</th>
-                <th>Посилання</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Приклад каналу</td>
-                <td><a href="#">@example</a></td>
-            </tr>
-            </tbody>
-    </table>
-
-    <div class="form-section">
-        <div class="form-header">
-            <h2 style="margin: 0; font-size: 18px;">Додати свій канал до списку</h2>
+        <div class="widget-section">
+            <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSej-7DpeTU6h2JRdAWJoLXhDaQeU9C4mfkUUT_vMjFt7vvdoA/viewform?embedded=true" 
+                width="100%" 
+                height="650" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0">
+                Завантаження…
+            </iframe>
         </div>
-        <iframe 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSc-IVzLsXqjQXLHrA0_xJBzd7hg3H5xdu_dgswZzD-EO5KQ5w/viewform?embedded=true" 
-            width="100%" 
-            height="700" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0">
-            Завантаження...
-        </iframe>
+
+        <p>Графік торгів (DEXTools):</p>
+        
+        <div class="widget-section">
+            <iframe
+                id="dextools-widget"
+                title="DEXTools Trading Chart"
+                width="100%"
+                height="400"
+                style="max-width: 100%; border: 1px solid #333;"
+                src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true&headerColor=1F2937&tvPlatformColor=1F2937&tvPaneColor=1F2937">
+            </iframe>
+        </div>
     </div>
-</div>
 
 </body>
 </html>
