@@ -5,31 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Рейтинг ТГ Каналів</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: auto; padding: 20px; background: #f0f2f5; color: #1c1e21; }
-        .header { text-align: center; padding: 40px 0; background: white; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 30px; }
-        h1 { margin: 0; color: #007bff; }
-        .container { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        iframe { border: none; width: 100%; height: 600px; border-radius: 10px; }
-        .btn-group { text-align: center; margin-top: 30px; }
-        .btn { display: inline-block; padding: 12px 25px; background: #28a745; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
-        .btn:hover { background: #218838; transform: translateY(-2px); }
-        .btn-tg { background: #0088cc; margin-left: 10px; }
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: auto; padding: 20px; background: #f0f2f5; }
+        .header { text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .container { background: white; padding: 10px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; }
+        iframe { border: none; width: 100%; height: 700px; }
+        .btn-tg { display: block; width: fit-content; margin: 20px auto; padding: 12px 25px; background: #0088cc; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div class="header">
         <h1>🏆 Народний Рейтинг ТГ</h1>
-        <p>Актуальний список перевірених каналів та чатів</p>
+        <p>Дані оновлюються автоматично з Google Таблиці</p>
     </div>
 
     <div class="container">
-        <iframe src="https://docs.google.com/spreadsheets/d/1wha0orzXBuGQEcEzP0r37CcQvhfV5ccbz6F2-tuGN2Y/pubhtml?widget=true&amp;headers=false"></iframe>
+        <iframe src="https://docs.google.com/spreadsheets/d/1wha0orzXBuGQEcEzP0r37CcQvhfV5ccbz6F2-tuGN2Y/preview"></iframe>
     </div>
 
-    <div class="btn-group">
-        <a href="https://t.me/ВАШ_НІК" class="btn btn-tg">📢 Запропонувати канал (Telegram)</a>
-    </div>
+    <a href="https://t.me/providnykzpoun" class="btn-tg">📢 Запропонувати канал</a>
 
 </body>
 </html>
