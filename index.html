@@ -3,53 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рейтинг Телеграм Каналів</title>
+    <title>UA Lottery</title>
     <style>
-        body { font-family: sans-serif; background-color: #0f172a; color: white; text-align: center; margin: 0; padding: 10px; }
-        .header-table { width: 100%; border-collapse: collapse; background: #1e293b; color: white; border-radius: 8px; overflow: hidden; margin-bottom: 20px; border: 1px solid #334155; }
-        .header-table th, .header-table td { padding: 12px; border: 1px solid #334155; }
-        .form-container { background: #1e293b; border-radius: 12px; padding: 15px; border: 1px solid #334155; margin-bottom: 20px; }
-        .form-title { background: #3b82f6; color: white; padding: 10px; border-radius: 8px 8px 0 0; margin: -15px -15px 15px -15px; font-weight: bold; }
-        iframe { border-radius: 8px; border: none; background: white; }
+        body { background: #0f172a; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 15px; }
+        .card { background: #1e293b; border-radius: 12px; padding: 15px; margin-bottom: 20px; border: 1px solid #334155; }
+        iframe { width: 100%; border: none; border-radius: 8px; background: white; }
     </style>
 </head>
 <body>
-
-    <h2>🏆 Топ Телеграм Каналів</h2>
-
-    <table class="header-table">
-        <tr>
-            <th>Місце</th>
-            <th>Назва каналу</th>
-            <th>Посилання</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Приклад каналу</td>
-            <td><a href="#" style="color: #38bdf8;">@example</a></td>
-        </tr>
-    </table>
-
-    <div class="form-container">
-        <div class="form-title">Додати свій канал до списку</div>
+    <h2>UA Lottery</h2>
+    
+    <div class="card">
+        <p>Додати канал (текстові поля):</p>
         <iframe 
             src="https://docs.google.com/forms/d/e/1FAIpQLSej-7DpeTU6h2JRdAWJoLXhDaQeU9C4mfkUUT_vMjFt7vvdoA/viewform?embedded=true" 
-            width="100%" 
-            height="800" 
-            frameborder="0">
+            height="750">
             Завантаження...
         </iframe>
     </div>
 
-    <div class="form-container">
-        <div class="form-title">Графік торгів</div>
-        <iframe
-            id="dextools-widget"
-            width="100%"
-            height="400"
-            src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true">
+    <div class="card">
+        <p>Графік торгів:</p>
+        <iframe 
+            src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true" 
+            height="400">
         </iframe>
     </div>
-
 </body>
 </html>
