@@ -3,60 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UA Lottery - Мій Проєкт</title>
+    <title>UA Lottery - Оновлена форма</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #111827;
-            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
             text-align: center;
-            padding: 20px;
             margin: 0;
+            padding: 10px;
         }
         .container {
-            max-width: 800px;
-            margin: auto;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        h1 { color: #3b82f6; }
-        .widget-section {
-            margin: 30px 0;
-            padding: 15px;
-            background: #1f2937;
-            border-radius: 12px;
+        h1 {
+            color: #38bdf8;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .section {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #334155;
         }
         iframe {
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
+            background: transparent;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Вітаємо в UA Lottery!</h1>
-        <p>Налаштована форма для подачі ваших каналів:</p>
-
-        <div class="widget-section">
+        <h1>UA Lottery</h1>
+        
+        <div class="section">
             <iframe 
                 src="https://docs.google.com/forms/d/e/1FAIpQLSej-7DpeTU6h2JRdAWJoLXhDaQeU9C4mfkUUT_vMjFt7vvdoA/viewform?embedded=true" 
                 width="100%" 
-                height="650" 
+                height="700" 
                 frameborder="0" 
                 marginheight="0" 
                 marginwidth="0">
-                Завантаження…
+                Завантаження...
             </iframe>
         </div>
 
-        <p>Графік торгів (DEXTools):</p>
-        
-        <div class="widget-section">
+        <div class="section">
+            <p style="font-weight: bold; margin-bottom: 10px;">Графік торгів:</p>
             <iframe
                 id="dextools-widget"
                 title="DEXTools Trading Chart"
                 width="100%"
                 height="400"
-                style="max-width: 100%; border: 1px solid #333;"
                 src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true&headerColor=1F2937&tvPlatformColor=1F2937&tvPaneColor=1F2937">
             </iframe>
         </div>
