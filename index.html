@@ -3,31 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UA Lottery</title>
+    <title>UA Lottery - Живий Рейтинг</title>
     <style>
-        body { background: #0f172a; color: white; text-align: center; font-family: sans-serif; margin: 0; padding: 15px; }
-        .card { background: #1e293b; border-radius: 12px; padding: 15px; margin-bottom: 20px; border: 1px solid #334155; }
-        iframe { width: 100%; border: none; border-radius: 8px; background: white; }
+        body { background: #0f172a; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; text-align: center; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .card { background: #1e293b; border-radius: 16px; padding: 20px; margin-bottom: 25px; border: 1px solid #334155; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        h1 { color: #3b82f6; margin-bottom: 10px; }
+        p { color: #94a3b8; margin-bottom: 25px; }
+        /* Стиль для Logspot */
+        .logspot-embed { min-height: 500px; background: #ffffff; border-radius: 12px; overflow: hidden; }
     </style>
+    <script async data-logspot-pk="pk_Py2TezzB4NwdQmGiCYoGfBs3Fl0uSOkg6_qsCtXj" src="https://cdn.logspot.io/lg.js"></script>
 </head>
 <body>
-    <h2>UA Lottery</h2>
-    
-    <div class="card">
-        <p>Додати канал (текстові поля):</p>
-        <iframe 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSej-7DpeTU6h2JRdAWJoLXhDaQeU9C4mfkUUT_vMjFt7vvdoA/viewform?embedded=true" 
-            height="750">
-            Завантаження...
-        </iframe>
+
+    <div class="container">
+        <h1>🏆 UA Lottery Rating</h1>
+        <p>Додавай свій канал та голосуй за найкращих!</p>
+
+        <div class="card">
+            <div id="logspot-board"></div>
+        </div>
+
+        <div class="card">
+            <h3>📈 Графік торгів</h3>
+            <iframe
+              id="dextools-widget"
+              title="DEXTools Trading Chart"
+              width="100%"
+              height="400"
+              style="border-radius: 8px; border: 1px solid #333;"
+              src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true&headerColor=1F2937&tvPlatformColor=1F2937&tvPaneColor=1F2937">
+            </iframe>
+        </div>
     </div>
 
-    <div class="card">
-        <p>Графік торгів:</p>
-        <iframe 
-            src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true" 
-            height="400">
-        </iframe>
-    </div>
 </body>
 </html>
