@@ -6,44 +6,53 @@
     <title>UA Lottery - Рейтинг</title>
     <style>
         body { background: #0f172a; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
-        .container { max-width: 600px; margin: 0 auto; }
+        .container { max-width: 500px; margin: 0 auto; }
         .card { background: #1e293b; border-radius: 16px; padding: 20px; margin-bottom: 20px; border: 1px solid #334155; }
-        .btn-add { 
-            display: inline-block; 
-            background: #3b82f6; 
-            color: white; 
-            padding: 15px 30px; 
-            border-radius: 12px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            margin-bottom: 10px;
-            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
-        }
-        #logspot-board { min-height: 400px; margin-top: 20px; }
+        input { padding: 12px; border-radius: 8px; border: none; width: 60%; background: #0f172a; color: white; }
+        button { padding: 12px 20px; border-radius: 8px; border: none; background: #3b82f6; color: white; font-weight: bold; cursor: pointer; }
+        #status { margin-top: 10px; font-size: 14px; color: #94a3b8; }
+        #logspot-board { min-height: 400px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>🏆 Рейтинг UA Каналів</h1>
+    <h1>🏆 Рейтинг Каналів</h1>
 
     <div class="card">
-        <h3>Хочеш додати свій канал?</h3>
-        <a href="https://app.logspot.io/board/rating/add" target="_blank" class="btn-add">➕ ДОДАТИ КАНАЛ</a>
-        <p style="font-size: 13px; color: #94a3b8;">(Після натискання впиши назву каналу та натисни "Create")</p>
+        <h3>Додати канал:</h3>
+        <input type="text" id="chan" placeholder="@username">
+        <button onclick="send()">Додати</button>
+        <div id="status"></div>
     </div>
 
     <div class="card">
         <div id="logspot-board" data-logspot-board="rating"></div>
     </div>
-
-    <div class="card">
-        <h3>📈 Графік TON</h3>
-        <iframe src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true&headerColor=1F2937&tvPlatformColor=1F2937&tvPaneColor=1F2937" width="100%" height="300" style="border:none; border-radius:8px;"></iframe>
-    </div>
 </div>
 
 <script async data-logspot-pk="pk_Py2TezzB4NwdQmGiCYoGfBs3Fl0uSOkg6_qsCtXj" src="https://cdn.logspot.io/lg.js"></script>
+
+<script>
+    function send() {
+        const val = document.getElementById('chan').value;
+        const st = document.getElementById('status');
+        if (!val) return;
+
+        st.innerText = "Відправляємо...";
+
+        // Перевірка чи завантажився скрипт Logspot
+        if (window.Logspot) {
+            window.Logspot.event("new_channel", { name: val });
+            st.style.color = "#4ade80";
+            st.innerText = "✅ Надіслано! Канал з'явиться в списку скоро.";
+            document.getElementById('chan').value = "";
+        } else {
+            st.style.color = "#f87171";
+            st.innerText = "❌ Скрипт вантажиться, почекай 3 сек.";
+        }
+    }
+</script>
 
 </body>
 </html>
