@@ -5,51 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UA Lottery - Рейтинг</title>
     <style>
-        body { background: #0f172a; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
+        body { background: #0f172a; color: white; font-family: sans-serif; text-align: center; padding: 20px; margin: 0; }
         .container { max-width: 500px; margin: 0 auto; }
-        .card { background: #1e293b; border-radius: 16px; padding: 20px; margin-bottom: 20px; border: 1px solid #334155; }
-        input { padding: 12px; border-radius: 8px; border: none; width: 60%; background: #0f172a; color: white; }
-        button { padding: 12px 20px; border-radius: 8px; border: none; background: #3b82f6; color: white; font-weight: bold; cursor: pointer; }
-        #status { margin-top: 10px; font-size: 14px; color: #94a3b8; }
-        #logspot-board { min-height: 400px; }
+        .card { background: #1e293b; border-radius: 16px; padding: 20px; margin-bottom: 20px; border: 1px solid #334155; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        h1 { color: #3b82f6; margin-bottom: 25px; }
+        .input-group { display: flex; gap: 8px; margin-bottom: 10px; }
+        input { flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: white; outline: none; }
+        button { padding: 12px 20px; border-radius: 8px; border: none; background: #3b82f6; color: white; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #2563eb; }
+        #status { font-size: 14px; min-height: 20px; transition: 0.3s; }
+        #logspot-board { min-height: 400px; margin-top: 10px; }
+        iframe { border-radius: 12px; border: 1px solid #334155; margin-top: 10px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>🏆 Рейтинг Каналів</h1>
+    <h1>🏆 Рейтинг UA Каналів</h1>
 
     <div class="card">
-        <h3>Додати канал:</h3>
-        <input type="text" id="chan" placeholder="@username">
-        <button onclick="send()">Додати</button>
+        <h3>Додати свій канал:</h3>
+        <div class="input-group">
+            <input type="text" id="chanInput" placeholder="@назва_каналу">
+            <button onclick="handleSend()">Додати</button>
+        </div>
         <div id="status"></div>
     </div>
 
     <div class="card">
         <div id="logspot-board" data-logspot-board="rating"></div>
     </div>
+
+    <div class="card" style="padding: 10px;">
+        <iframe
+          id="dextools-widget"
+          title="DEXTools Chart"
+          width="100%"
+          height="300"
+          src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true&headerColor=1F2937&tvPlatformColor=1F2937&tvPaneColor=1F2937">
+        </iframe>
+    </div>
 </div>
 
 <script async data-logspot-pk="pk_Py2TezzB4NwdQmGiCYoGfBs3Fl0uSOkg6_qsCtXj" src="https://cdn.logspot.io/lg.js"></script>
 
 <script>
-    function send() {
-        const val = document.getElementById('chan').value;
-        const st = document.getElementById('status');
-        if (!val) return;
+    function handleSend() {
+        const input = document.getElementById('chanInput');
+        const status = document.getElementById('status');
+        const val = input.value.trim();
 
-        st.innerText = "Відправляємо...";
+        if (!val) {
+            status.innerText = "⚠️ Введи назву каналу!";
+            status.style.color = "#fbbf24";
+            return;
+        }
 
-        // Перевірка чи завантажився скрипт Logspot
-        if (window.Logspot) {
-            window.Logspot.event("new_channel", { name: val });
-            st.style.color = "#4ade80";
-            st.innerText = "✅ Надіслано! Канал з'явиться в списку скоро.";
-            document.getElementById('chan').value = "";
+        status.innerText = "Відправляю...";
+        status.style.color = "#94a3b8";
+
+        // Спроба відправки через глобальний об'єкт (Logspot або logspot)
+        const lg = window.Logspot || window.logspot;
+
+        if (lg && typeof lg.event === 'function') {
+            try {
+                lg.event('submission', { name: val });
+                status.innerText = "✅ Надіслано! З'явиться після модерації.";
+                status.style.color = "#4ade80";
+                input.value = "";
+            } catch (e) {
+                status.innerText = "❌ Помилка відправки.";
+                status.style.color = "#f87171";
+            }
         } else {
-            st.style.color = "#f87171";
-            st.innerText = "❌ Скрипт вантажиться, почекай 3 сек.";
+            status.innerText = "⏳ Зачекай, скрипт ще завантажується...";
+            status.style.color = "#fbbf24";
         }
     }
 </script>
