@@ -1,0 +1,20 @@
+name: Telegram Update
+on:
+  repository_dispatch:
+    types: [add_channel]
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Add to rating
+        run: |
+          # Додаємо новий рядок у список
+          sed -i "//a <div style='background:#1e293b; padding:15px; border-radius:10px; margin-bottom:10px; border:1px solid #334155;'><b>${{ github.event.client_payload.name }}</b></div>" index.html
+      - name: Save changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add index.html
+          git commit -m "Додано канал через ТГ"
+          git push
