@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UA Lottery - Живий Рейтинг</title>
+    <title>UA Lottery - Rating</title>
     <style>
-        body { background: #0f172a; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; text-align: center; }
+        body { background: #0f172a; color: white; font-family: sans-serif; text-align: center; margin: 0; padding: 20px; }
         .container { max-width: 800px; margin: 0 auto; }
-        .card { background: #1e293b; border-radius: 16px; padding: 20px; margin-bottom: 25px; border: 1px solid #334155; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-        h1 { color: #3b82f6; margin-bottom: 10px; }
-        p { color: #94a3b8; margin-bottom: 25px; }
-        /* Стиль для Logspot */
-        .logspot-embed { min-height: 500px; background: #ffffff; border-radius: 12px; overflow: hidden; }
+        .card { background: #1e293b; border-radius: 16px; padding: 20px; margin-bottom: 20px; border: 1px solid #334155; }
+        h1 { color: #3b82f6; }
+        /* Щоб Logspot виглядав гарно */
+        #logspot-board { min-height: 400px; width: 100%; border-radius: 12px; }
     </style>
     <script async data-logspot-pk="pk_Py2TezzB4NwdQmGiCYoGfBs3Fl0uSOkg6_qsCtXj" src="https://cdn.logspot.io/lg.js"></script>
 </head>
@@ -19,22 +18,15 @@
 
     <div class="container">
         <h1>🏆 UA Lottery Rating</h1>
-        <p>Додавай свій канал та голосуй за найкращих!</p>
+        <p>Додавай свій канал та голосуй!</p>
 
         <div class="card">
-            <div id="logspot-board"></div>
+            <div id="logspot-board" data-logspot-board="rating"></div>
         </div>
 
         <div class="card">
-            <h3>📈 Графік торгів</h3>
-            <iframe
-              id="dextools-widget"
-              title="DEXTools Trading Chart"
-              width="100%"
-              height="400"
-              style="border-radius: 8px; border: 1px solid #333;"
-              src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true&headerColor=1F2937&tvPlatformColor=1F2937&tvPaneColor=1F2937">
-            </iframe>
+            <h3>📊 Графік</h3>
+            <iframe src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark" width="100%" height="400" style="border:none; border-radius:8px;"></iframe>
         </div>
     </div>
 
