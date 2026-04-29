@@ -8,41 +8,42 @@
         body { font-family: 'Segoe UI', sans-serif; background: #0b0f1a; color: #e2e8f0; margin: 0; padding: 0; text-align: center; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
         
-        /* Заголовок */
-        header { padding: 20px 0; }
+        header { padding: 15px 0; }
         h1 { color: #fff; margin: 0; font-size: 28px; letter-spacing: 2px; }
-        .subtitle { color: #94a3b8; font-size: 14px; margin-top: 5px; }
+        .subtitle { color: #94a3b8; font-size: 14px; }
 
-        /* Графік */
-        .chart-container { background: #111827; border-radius: 12px; padding: 10px; border: 1px solid #334155; margin: 20px 0; }
+        .chart-container { background: #111827; border-radius: 12px; padding: 10px; border: 1px solid #334155; margin: 15px 0; }
 
-        /* Секція Stars */
+        /* Секція Stars з інструкцією */
         .stars-section { 
             background: linear-gradient(135deg, #1e293b, #0f172a); 
             border: 2px solid #fbbf24; 
             border-radius: 20px; 
             padding: 20px; 
-            margin: 25px 0;
+            margin: 20px 0;
+            text-align: left;
         }
-        .stars-title { color: #fbbf24; font-size: 20px; font-weight: bold; margin-bottom: 10px; }
-        .rate-value { font-size: 24px; font-weight: bold; color: #fff; margin-bottom: 15px; }
+        .stars-title { color: #fbbf24; font-size: 20px; font-weight: bold; text-align: center; margin-bottom: 5px; }
+        .rate-value { font-size: 22px; font-weight: bold; color: #fff; text-align: center; margin-bottom: 15px; }
+        
+        .steps { font-size: 14px; line-height: 1.5; margin-bottom: 15px; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 10px; }
+        .step-num { color: #fbbf24; font-weight: bold; margin-right: 5px; }
+
         .btn-bot { 
             display: block; background: #fbbf24; color: #000; padding: 15px; 
-            border-radius: 12px; text-decoration: none; font-weight: bold; transition: 0.3s;
+            border-radius: 12px; text-decoration: none; font-weight: bold; text-align: center; transition: 0.3s;
         }
 
-        /* Торгівля (Куплю/Продам) */
-        .trade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 25px 0; }
-        .trade-box { background: #1e293b; border-radius: 15px; padding: 15px; border: 1px solid #334155; }
-        .buy-title { color: #10b981; font-weight: bold; border-bottom: 1px solid #10b981; margin-bottom: 10px; padding-bottom: 5px; }
-        .sell-title { color: #ef4444; font-weight: bold; border-bottom: 1px solid #ef4444; margin-bottom: 10px; padding-bottom: 5px; }
-        .order-list { list-style: none; padding: 0; font-size: 13px; text-align: left; }
-        .order-item { padding: 5px 0; border-bottom: 1px solid #2d3748; }
+        .trade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+        .trade-box { background: #1e293b; border-radius: 12px; padding: 12px; border: 1px solid #334155; }
+        .buy-title { color: #10b981; font-size: 14px; font-weight: bold; border-bottom: 1px solid #10b981; margin-bottom: 8px; }
+        .sell-title { color: #ef4444; font-size: 14px; font-weight: bold; border-bottom: 1px solid #ef4444; margin-bottom: 8px; }
+        .order-list { list-style: none; padding: 0; font-size: 12px; text-align: left; margin: 0; }
+        .order-item { padding: 4px 0; border-bottom: 1px solid #2d3748; }
 
-        /* Кнопка ігор */
         .games-link { 
-            display: block; background: #4f46e5; color: white; padding: 15px; 
-            border-radius: 12px; text-decoration: none; font-weight: bold; margin-top: 20px;
+            display: block; background: #4f46e5; color: white; padding: 12px; 
+            border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 15px;
         }
     </style>
 </head>
@@ -51,18 +52,26 @@
 <div class="container">
     <header>
         <h1>UA HUB</h1>
-        <p class="subtitle">Єдиний центр екосистеми UA Token</p>
+        <p class="subtitle">Торгівля та екосистема UA Token</p>
     </header>
 
     <div class="chart-container">
         <iframe src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true&headerColor=1F2937&tvPlatformColor=1F2937&tvPaneColor=1F2937" 
-        width="100%" height="320" style="border:none; border-radius: 8px;"></iframe>
+        width="100%" height="300" style="border:none; border-radius: 8px;"></iframe>
     </div>
 
     <div class="stars-section">
-        <div class="stars-title">💎 Швидкий обмін Stars</div>
+        <div class="stars-title">💎 Обмін Stars на UA</div>
         <div class="rate-value">1 STARS = 10,000 UA</div>
-        <a href="https://t.me/Anketkaua_bot?start=sub167543" target="_blank" class="btn-bot">🚀 КУПИТИ ЧЕРЕЗ БОТ</a>
+        
+        <div class="steps">
+            <div><span class="step-num">1.</span> Натисніть кнопку та перейдіть у бот.</div>
+            <div><span class="step-num">2.</span> Оплатіть 1 Stars для входу в групу.</div>
+            <div><span class="step-num">3.</span> Залиште номер гаманця TON у групі.</div>
+            <div><span class="step-num">4.</span> Отримайте 10,000 UA автоматично!</div>
+        </div>
+        
+        <a href="https://t.me/Anketkaua_bot?start=sub167543" target="_blank" class="btn-bot">🚀 ПЕРЕЙТИ ДО БОТА</a>
     </div>
 
     <div class="trade-grid">
@@ -82,9 +91,7 @@
         </div>
     </div>
 
-    <a href="games.html" class="games-link">🎮 ГРАЙ ТА ЗАРОБЛЯЙ UA</a>
-
-    <p style="font-size: 11px; color: #4b5563; margin-top: 30px;">© 2026 UA HUB. All rights reserved.</p>
+    <a href="games.html" class="games-link">🎮 ІГРИ ТА ЛОТЕРЕЯ UA</a>
 </div>
 
 </body>
