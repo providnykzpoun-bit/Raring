@@ -3,56 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UA HUB — Торговий портал</title>
+    <title>UA HUB</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background: #0b0f1a; color: #e2e8f0; margin: 0; padding: 0; text-align: center; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
         
+        /* Кнопки мов */
+        .lang-switcher { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        .lang-btn { background: #1e293b; border: 1px solid #334155; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 12px; }
+        .lang-btn:hover { border-color: #fbbf24; }
+
         header { padding: 15px 0; }
         h1 { color: #fff; margin: 0; font-size: 28px; letter-spacing: 2px; }
         .subtitle { color: #94a3b8; font-size: 14px; }
 
         .chart-container { background: #111827; border-radius: 12px; padding: 10px; border: 1px solid #334155; margin: 15px 0; }
 
-        /* Секція Stars з інструкцією */
-        .stars-section { 
-            background: linear-gradient(135deg, #1e293b, #0f172a); 
-            border: 2px solid #fbbf24; 
-            border-radius: 20px; 
-            padding: 20px; 
-            margin: 20px 0;
-            text-align: left;
-        }
+        .stars-section { background: linear-gradient(135deg, #1e293b, #0f172a); border: 2px solid #fbbf24; border-radius: 20px; padding: 20px; margin: 20px 0; text-align: left; }
         .stars-title { color: #fbbf24; font-size: 20px; font-weight: bold; text-align: center; margin-bottom: 5px; }
         .rate-value { font-size: 22px; font-weight: bold; color: #fff; text-align: center; margin-bottom: 15px; }
         
         .steps { font-size: 14px; line-height: 1.5; margin-bottom: 15px; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 10px; }
         .step-num { color: #fbbf24; font-weight: bold; margin-right: 5px; }
 
-        .btn-bot { 
-            display: block; background: #fbbf24; color: #000; padding: 15px; 
-            border-radius: 12px; text-decoration: none; font-weight: bold; text-align: center; transition: 0.3s;
-        }
+        .btn-bot { display: block; background: #fbbf24; color: #000; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; text-align: center; }
 
         .trade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
         .trade-box { background: #1e293b; border-radius: 12px; padding: 12px; border: 1px solid #334155; }
         .buy-title { color: #10b981; font-size: 14px; font-weight: bold; border-bottom: 1px solid #10b981; margin-bottom: 8px; }
         .sell-title { color: #ef4444; font-size: 14px; font-weight: bold; border-bottom: 1px solid #ef4444; margin-bottom: 8px; }
-        .order-list { list-style: none; padding: 0; font-size: 12px; text-align: left; margin: 0; }
-        .order-item { padding: 4px 0; border-bottom: 1px solid #2d3748; }
-
-        .games-link { 
-            display: block; background: #4f46e5; color: white; padding: 12px; 
-            border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 15px;
-        }
+        
+        .games-link { display: block; background: #4f46e5; color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 15px; }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <div class="lang-switcher">
+        <button class="lang-btn" onclick="setLang('uk')">🇺🇦 UA</button>
+        <button class="lang-btn" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" onclick="setLang('de')">🇩🇪 DE</button>
+        <button class="lang-btn" onclick="setLang('fr')">🇫🇷 FR</button>
+    </div>
+
     <header>
-        <h1>UA HUB</h1>
-        <p class="subtitle">Торгівля та екосистема UA Token</p>
+        <h1 id="main-title">UA HUB</h1>
+        <p id="main-subtitle" class="subtitle">Торгівля та екосистема UA Token</p>
     </header>
 
     <div class="chart-container">
@@ -61,38 +57,95 @@
     </div>
 
     <div class="stars-section">
-        <div class="stars-title">💎 Обмін Stars на UA</div>
+        <div id="stars-title" class="stars-title">💎 Обмін Stars на UA</div>
         <div class="rate-value">1 STARS = 10,000 UA</div>
         
-        <div class="steps">
+        <div class="steps" id="steps-list">
             <div><span class="step-num">1.</span> Натисніть кнопку та перейдіть у бот.</div>
             <div><span class="step-num">2.</span> Оплатіть 1 Stars для входу в групу.</div>
             <div><span class="step-num">3.</span> Залиште номер гаманця TON у групі.</div>
             <div><span class="step-num">4.</span> Отримайте 10,000 UA автоматично!</div>
         </div>
         
-        <a href="https://t.me/Anketkaua_bot?start=sub167543" target="_blank" class="btn-bot">🚀 ПЕРЕЙТИ ДО БОТА</a>
+        <a href="https://t.me/Anketkaua_bot?start=sub167543" target="_blank" id="btn-text" class="btn-bot">🚀 ПЕРЕЙТИ ДО БОТА</a>
     </div>
 
     <div class="trade-grid">
         <div class="trade-box">
-            <div class="buy-title">КУПЛЮ</div>
-            <ul class="order-list">
-                <li class="order-item">🔹 500 UA @ 5.1$</li>
-                <li class="order-item">🔹 1200 UA @ 5.0$</li>
-            </ul>
+            <div id="buy-label" class="buy-title">КУПЛЮ</div>
+            <div style="font-size: 12px;">Active orders...</div>
         </div>
         <div class="trade-box">
-            <div class="sell-title">ПРОДАМ</div>
-            <ul class="order-list">
-                <li class="order-item">🔸 300 UA @ 5.5$</li>
-                <li class="order-item">🔸 100 UA @ 5.6$</li>
-            </ul>
+            <div id="sell-label" class="sell-title">ПРОДАМ</div>
+            <div style="font-size: 12px;">Active orders...</div>
         </div>
     </div>
 
-    <a href="games.html" class="games-link">🎮 ІГРИ ТА ЛОТЕРЕЯ UA</a>
+    <a href="games.html" id="games-btn" class="games-link">🎮 ІГРИ ТА ЛОТЕРЕЯ UA</a>
 </div>
+
+<script>
+    const translations = {
+        uk: {
+            subtitle: "Торгівля та екосистема UA Token",
+            starsTitle: "💎 Обмін Stars на UA",
+            btn: "🚀 ПЕРЕЙТИ ДО БОТА",
+            buy: "КУПЛЮ",
+            sell: "ПРОДАМ",
+            games: "🎮 ІГРИ ТА ЛОТЕРЕЯ UA",
+            steps: `<div><span class="step-num">1.</span> Натисніть кнопку та перейдіть у бот.</div>
+                    <div><span class="step-num">2.</span> Оплатіть 1 Stars для входу в групу.</div>
+                    <div><span class="step-num">3.</span> Залиште номер гаманця TON у групі.</div>
+                    <div><span class="step-num">4.</span> Отримайте 10,000 UA автоматично!</div>`
+        },
+        en: {
+            subtitle: "Trading & UA Token Ecosystem",
+            starsTitle: "💎 Exchange Stars for UA",
+            btn: "🚀 GO TO BOT",
+            buy: "BUY",
+            sell: "SELL",
+            games: "🎮 GAMES & LOTTERY UA",
+            steps: `<div><span class="step-num">1.</span> Click the button to open the bot.</div>
+                    <div><span class="step-num">2.</span> Pay 1 Stars to join the group.</div>
+                    <div><span class="step-num">3.</span> Send your TON wallet in the group.</div>
+                    <div><span class="step-num">4.</span> Get 10,000 UA automatically!</div>`
+        },
+        de: {
+            subtitle: "Handel & UA Token Ökosystem",
+            starsTitle: "💎 Stars gegen UA tauschen",
+            btn: "🚀 ZUM BOT GEHEN",
+            buy: "KAUFEN",
+            sell: "VERKAUFEN",
+            games: "🎮 SPIELE & LOTTERIE UA",
+            steps: `<div><span class="step-num">1.</span> Klicken Sie auf den Bot-Button.</div>
+                    <div><span class="step-num">2.</span> Zahlen Sie 1 Stars für den Zugang.</div>
+                    <div><span class="step-num">3.</span> Senden Sie Ihre TON-Wallet-Adresse.</div>
+                    <div><span class="step-num">4.</span> Erhalten Sie 10,000 UA automatisch!</div>`
+        },
+        fr: {
+            subtitle: "Trading & Écosystème UA Token",
+            starsTitle: "💎 Échanger Stars contre UA",
+            btn: "🚀 ALLER AU BOT",
+            buy: "ACHETER",
+            sell: "VENDRE",
+            games: "🎮 JEUX & LOTERIE UA",
+            steps: `<div><span class="step-num">1.</span> Cliquez sur le bouton du bot.</div>
+                    <div><span class="step-num">2.</span> Payez 1 Stars pour accéder au groupe.</div>
+                    <div><span class="step-num">3.</span> Envoyez votre adresse de portefeuille TON.</div>
+                    <div><span class="step-num">4.</span> Recevez 10,000 UA automatiquement!</div>`
+        }
+    };
+
+    function setLang(lang) {
+        document.getElementById('main-subtitle').innerText = translations[lang].subtitle;
+        document.getElementById('stars-title').innerText = translations[lang].starsTitle;
+        document.getElementById('btn-text').innerText = translations[lang].btn;
+        document.getElementById('buy-label').innerText = translations[lang].buy;
+        document.getElementById('sell-label').innerText = translations[lang].sell;
+        document.getElementById('games-btn').innerText = translations[lang].games;
+        document.getElementById('steps-list').innerHTML = translations[lang].steps;
+    }
+</script>
 
 </body>
 </html>
