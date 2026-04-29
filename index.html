@@ -3,66 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UA Token — Торговий Хаб</title>
+    <title>UA Token — Обмін Stars</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b0f1a; color: #e2e8f0; margin: 0; padding: 0; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
-        header { padding: 20px 0; border-bottom: 1px solid #1e293b; }
-        h1 { color: #3b82f6; margin: 0; font-size: 24px; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0b0f1a; color: #e2e8f0; margin: 0; padding: 0; text-align: center; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
         
-        /* Стиль для віджета */
-        .chart-container { margin: 20px 0; background: #111827; border-radius: 12px; padding: 10px; border: 1px solid #334155; }
+        .rate-card { 
+            background: linear-gradient(135deg, #1e293b, #0f172a); 
+            border: 2px solid #fbbf24; 
+            border-radius: 20px; 
+            padding: 25px; 
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+        }
+        .rate-value { font-size: 32px; font-weight: bold; color: #fbbf24; margin: 10px 0; }
         
-        /* Кнопка переходу на ігри */
-        .games-btn { display: block; background: linear-gradient(90deg, #6366f1, #a855f7); color: white; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; margin: 20px 0; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4); }
+        .chart-container { background: #111827; border-radius: 12px; padding: 10px; border: 1px solid #334155; margin-bottom: 20px; }
         
-        /* Секція Купівля/Продаж */
-        .trade-section { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
-        .trade-box { background: #1e293b; border-radius: 12px; padding: 15px; border: 1px solid #334155; }
-        .buy-title { color: #10b981; border-bottom: 1px solid #10b981; padding-bottom: 5px; }
-        .sell-title { color: #ef4444; border-bottom: 1px solid #ef4444; padding-bottom: 5px; }
-        
-        .order-list { list-style: none; padding: 0; text-align: left; font-size: 14px; }
-        .order-item { padding: 8px 0; border-bottom: 1px solid #334155; }
+        .btn-bot { 
+            display: block; 
+            background: #fbbf24; 
+            color: #000; 
+            padding: 18px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 18px; 
+            transition: 0.3s;
+        }
+        .btn-bot:hover { transform: scale(1.02); background: #f59e0b; }
+
+        .steps { text-align: left; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; font-size: 14px; line-height: 1.6; }
+        .step-item { margin-bottom: 8px; display: flex; align-items: center; }
+        .step-num { background: #fbbf24; color: #000; width: 22px; height: 22px; border-radius: 50%; display: inline-block; text-align: center; margin-right: 10px; font-weight: bold; flex-shrink: 0; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <h1>UA Token Dashboard</h1>
-        <p style="color: #94a3b8; font-size: 14px;">Моніторинг ціни та активні заявки</p>
-    </header>
+    <h1 style="color: #fff; margin-bottom: 5px;">UA Token Hub</h1>
+    <p style="color: #94a3b8; margin-bottom: 25px;">Офіційний обмін Stars на UA</p>
 
     <div class="chart-container">
-        <iframe
-          id="dextools-widget"
-          title="DEXTools Trading Chart"
-          width="100%"
-          height="350"
-          style="border-radius: 8px; border: none;"
-          src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true&headerColor=1F2937&tvPlatformColor=1F2937&tvPaneColor=1F2937">
-        </iframe>
+        <iframe src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true&headerColor=1F2937&tvPlatformColor=1F2937&tvPaneColor=1F2937" 
+        width="100%" height="300" style="border:none; border-radius: 8px;"></iframe>
     </div>
 
-    <a href="games.html" class="games-btn">🎮 ГРАЙ ТА ЗАРОБЛЯЙ UA (ЛОТЕРЕЯ)</a>
-
-    <div class="trade-section">
-        <div class="trade-box">
-            <h2 class="buy-title">КУПЛЮ</h2>
-            <ul class="order-list">
-                <li class="order-item">💎 500 UA @ 5.1$</li>
-                <li class="order-item">💎 1200 UA @ 5.0$</li>
-            </ul>
+    <div class="rate-card">
+        <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Поточний курс</div>
+        <div class="rate-value">1 STARS = 10,000 UA</div>
+        
+        <div class="steps">
+            <div class="step-item"><span class="step-num">1</span> Натисніть кнопку нижче для переходу в бот</div>
+            <div class="step-item"><span class="step-num">2</span> Оплатіть 1 Stars та отримайте доступ</div>
+            <div class="step-item"><span class="step-num">3</span> Скиньте свій TON-гаманець у групі</div>
+            <div class="step-item"><span class="step-num">4</span> Отримайте свої 10,000 UA на баланс!</div>
         </div>
-        <div class="trade-box">
-            <h2 class="sell-title">ПРОДАМ</h2>
-            <ul class="order-list">
-                <li class="order-item">🚀 300 UA @ 5.5$</li>
-                <li class="order-item">🚀 100 UA @ 5.6$</li>
-            </ul>
-        </div>
+        
+        <br>
+        <a href="https://t.me/Anketkaua_bot?start=sub167543" target="_blank" class="btn-bot">🚀 КУПИТИ UA ЗА STARS</a>
     </div>
+
+    <p style="font-size: 12px; color: #4b5563;">*Обмін відбувається автоматично через закриту групу</p>
 </div>
 
 </body>
