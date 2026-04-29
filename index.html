@@ -3,19 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UA Crypto Rating</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#0f172a] text-white p-6">
-    <div class="max-w-xl mx-auto">
-        <h1 class="text-3xl font-bold text-center text-blue-500 mb-8">UA Crypto Rating</h1>
+    <title>UA Token — Торговий Хаб</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b0f1a; color: #e2e8f0; margin: 0; padding: 0; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
+        header { padding: 20px 0; border-bottom: 1px solid #1e293b; }
+        h1 { color: #3b82f6; margin: 0; font-size: 24px; }
         
-        <div id="list" class="space-y-4">
-            </div>
+        /* Стиль для віджета */
+        .chart-container { margin: 20px 0; background: #111827; border-radius: 12px; padding: 10px; border: 1px solid #334155; }
+        
+        /* Кнопка переходу на ігри */
+        .games-btn { display: block; background: linear-gradient(90deg, #6366f1, #a855f7); color: white; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; margin: 20px 0; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4); }
+        
+        /* Секція Купівля/Продаж */
+        .trade-section { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .trade-box { background: #1e293b; border-radius: 12px; padding: 15px; border: 1px solid #334155; }
+        .buy-title { color: #10b981; border-bottom: 1px solid #10b981; padding-bottom: 5px; }
+        .sell-title { color: #ef4444; border-bottom: 1px solid #ef4444; padding-bottom: 5px; }
+        
+        .order-list { list-style: none; padding: 0; text-align: left; font-size: 14px; }
+        .order-item { padding: 8px 0; border-bottom: 1px solid #334155; }
+    </style>
+</head>
+<body>
 
-        <div class="mt-10">
-            <iframe width="100%" height="300" style="border-radius:12px; border: 1px solid #334155;" src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1"></iframe>
+<div class="container">
+    <header>
+        <h1>UA Token Dashboard</h1>
+        <p style="color: #94a3b8; font-size: 14px;">Моніторинг ціни та активні заявки</p>
+    </header>
+
+    <div class="chart-container">
+        <iframe
+          id="dextools-widget"
+          title="DEXTools Trading Chart"
+          width="100%"
+          height="350"
+          style="border-radius: 8px; border: none;"
+          src="https://www.dextools.io/widget-chart/en/ton/pe-light/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9?theme=dark&chartType=1&chartResolution=1&drawingToolbars=false&chartInUsd=true&headerColor=1F2937&tvPlatformColor=1F2937&tvPaneColor=1F2937">
+        </iframe>
+    </div>
+
+    <a href="games.html" class="games-btn">🎮 ГРАЙ ТА ЗАРОБЛЯЙ UA (ЛОТЕРЕЯ)</a>
+
+    <div class="trade-section">
+        <div class="trade-box">
+            <h2 class="buy-title">КУПЛЮ</h2>
+            <ul class="order-list">
+                <li class="order-item">💎 500 UA @ 5.1$</li>
+                <li class="order-item">💎 1200 UA @ 5.0$</li>
+            </ul>
+        </div>
+        <div class="trade-box">
+            <h2 class="sell-title">ПРОДАМ</h2>
+            <ul class="order-list">
+                <li class="order-item">🚀 300 UA @ 5.5$</li>
+                <li class="order-item">🚀 100 UA @ 5.6$</li>
+            </ul>
         </div>
     </div>
+</div>
+
 </body>
 </html>
