@@ -27,7 +27,6 @@
         .link-card:hover { background: #334155; border-color: #fbbf24; transform: scale(1.02); }
         .icon { font-size: 20px; margin-right: 15px; width: 25px; text-align: center; }
         
-        /* Кольори для іконок */
         .tg { color: #24A1DE; }
         .yt { color: #FF0000; }
         .tt { color: #fff; }
@@ -36,6 +35,7 @@
         .wa { color: #25D366; }
         .dc { color: #5865F2; }
         .rd { color: #ef4444; }
+        .earn { color: #10b981; }
 
         .back-link { display: inline-block; margin-top: 30px; color: #94a3b8; text-decoration: none; font-size: 14px; padding: 10px 20px; border: 1px solid #334155; border-radius: 10px; }
     </style>
@@ -56,6 +56,11 @@
     </header>
 
     <div class="links-grid">
+        <div class="category-title" id="cat-earn">Можливості заробітку</div>
+        <a href="http://t.me/Piarpiarpiar_bot" target="_blank" class="link-card">
+            <span class="icon earn">💰</span> <span id="txt-earn-bot">Заробити UA (Piar Bot)</span>
+        </a>
+
         <div class="category-title" id="cat-tg">Telegram мережа</div>
         <a href="https://t.me/uatokenkrypta" target="_blank" class="link-card"><span class="icon tg">💬</span> <span>Група UA Token</span></a>
         <a href="https://t.me/uapublikgrup" target="_blank" class="link-card"><span class="icon tg">📹</span> <span>Канал UA Publik</span></a>
@@ -85,6 +90,8 @@
         uk: {
             title: "UA HUB Info",
             subtitle: "Усі наші офіційні ресурси",
+            catEarn: "Можливості заробітку",
+            earnBot: "Заробити UA (Piar Bot)",
             catTg: "Telegram мережа",
             catWeb: "Веб та Медіа",
             catSocial: "Соціальні мережі",
@@ -95,6 +102,8 @@
         en: {
             title: "UA HUB Info",
             subtitle: "All our official resources",
+            catEarn: "Earning Opportunities",
+            earnBot: "Earn UA (Piar Bot)",
             catTg: "Telegram Network",
             catWeb: "Web & Media",
             catSocial: "Social Networks",
@@ -105,6 +114,8 @@
         de: {
             title: "UA HUB Info",
             subtitle: "Alle unsere offiziellen Ressourcen",
+            catEarn: "Verdienstmöglichkeiten",
+            earnBot: "UA verdienen (Piar Bot)",
             catTg: "Telegram Netzwerk",
             catWeb: "Web & Medien",
             catSocial: "Soziale Netzwerke",
@@ -115,6 +126,8 @@
         fr: {
             title: "UA HUB Info",
             subtitle: "Toutes nos ressources officielles",
+            catEarn: "Opportunités de gain",
+            earnBot: "Gagner des UA (Piar Bot)",
             catTg: "Réseau Telegram",
             catWeb: "Web & Médias",
             catSocial: "Réseaux Sociaux",
@@ -127,6 +140,8 @@
     function setLang(lang) {
         document.getElementById('title').innerText = translations[lang].title;
         document.getElementById('subtitle').innerText = translations[lang].subtitle;
+        document.getElementById('cat-earn').innerText = translations[lang].catEarn;
+        document.getElementById('txt-earn-bot').innerText = translations[lang].earnBot;
         document.getElementById('cat-tg').innerText = translations[lang].catTg;
         document.getElementById('cat-web').innerText = translations[lang].catWeb;
         document.getElementById('cat-social').innerText = translations[lang].catSocial;
