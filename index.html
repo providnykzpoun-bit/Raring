@@ -8,7 +8,6 @@
         body { font-family: 'Segoe UI', sans-serif; background: #0b0f1a; color: #e2e8f0; margin: 0; padding: 0; text-align: center; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
         
-        /* Кнопки мов */
         .lang-switcher { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
         .lang-btn { background: #1e293b; border: 1px solid #334155; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 12px; }
         .lang-btn:hover { border-color: #fbbf24; }
@@ -26,7 +25,11 @@
         .steps { font-size: 14px; line-height: 1.5; margin-bottom: 15px; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 10px; }
         .step-num { color: #fbbf24; font-weight: bold; margin-right: 5px; }
 
-        .btn-bot { display: block; background: #fbbf24; color: #000; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; text-align: center; }
+        .btn-bot { display: block; background: #fbbf24; color: #000; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; text-align: center; margin-bottom: 10px; }
+        
+        /* Кнопка Донату */
+        .btn-donate { display: block; background: transparent; color: #10b981; padding: 12px; border-radius: 12px; text-decoration: none; font-weight: bold; text-align: center; border: 1px solid #10b981; transition: 0.3s; }
+        .btn-donate:hover { background: rgba(16, 185, 129, 0.1); }
 
         .trade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
         .trade-box { background: #1e293b; border-radius: 12px; padding: 12px; border: 1px solid #334155; }
@@ -68,16 +71,18 @@
         </div>
         
         <a href="https://t.me/Anketkaua_bot?start=sub167543" target="_blank" id="btn-text" class="btn-bot">🚀 ПЕРЕЙТИ ДО БОТА</a>
+        
+        <a href="donate.html" id="donate-text" class="btn-donate">❤️ ПІДТРИМАТИ ПРОЕКТ</a>
     </div>
 
     <div class="trade-grid">
         <div class="trade-box">
             <div id="buy-label" class="buy-title">КУПЛЮ</div>
-            <div style="font-size: 12px;">Active orders...</div>
+            <div style="font-size: 11px;">Active orders...</div>
         </div>
         <div class="trade-box">
             <div id="sell-label" class="sell-title">ПРОДАМ</div>
-            <div style="font-size: 12px;">Active orders...</div>
+            <div style="font-size: 11px;">Active orders...</div>
         </div>
     </div>
 
@@ -90,6 +95,7 @@
             subtitle: "Торгівля та екосистема UA Token",
             starsTitle: "💎 Обмін Stars на UA",
             btn: "🚀 ПЕРЕЙТИ ДО БОТА",
+            donate: "❤️ ПІДТРИМАТИ ПРОЕКТ",
             buy: "КУПЛЮ",
             sell: "ПРОДАМ",
             games: "🎮 ІГРИ ТА ЛОТЕРЕЯ UA",
@@ -102,6 +108,7 @@
             subtitle: "Trading & UA Token Ecosystem",
             starsTitle: "💎 Exchange Stars for UA",
             btn: "🚀 GO TO BOT",
+            donate: "❤️ SUPPORT PROJECT",
             buy: "BUY",
             sell: "SELL",
             games: "🎮 GAMES & LOTTERY UA",
@@ -114,6 +121,7 @@
             subtitle: "Handel & UA Token Ökosystem",
             starsTitle: "💎 Stars gegen UA tauschen",
             btn: "🚀 ZUM BOT GEHEN",
+            donate: "❤️ PROJEKT UNTERSTÜTZEN",
             buy: "KAUFEN",
             sell: "VERKAUFEN",
             games: "🎮 SPIELE & LOTTERIE UA",
@@ -126,6 +134,7 @@
             subtitle: "Trading & Écosystème UA Token",
             starsTitle: "💎 Échanger Stars contre UA",
             btn: "🚀 ALLER AU BOT",
+            donate: "❤️ SOUTENIR LE PROJET",
             buy: "ACHETER",
             sell: "VENDRE",
             games: "🎮 JEUX & LOTERIE UA",
@@ -140,6 +149,7 @@
         document.getElementById('main-subtitle').innerText = translations[lang].subtitle;
         document.getElementById('stars-title').innerText = translations[lang].starsTitle;
         document.getElementById('btn-text').innerText = translations[lang].btn;
+        document.getElementById('donate-text').innerText = translations[lang].donate;
         document.getElementById('buy-label').innerText = translations[lang].buy;
         document.getElementById('sell-label').innerText = translations[lang].sell;
         document.getElementById('games-btn').innerText = translations[lang].games;
