@@ -31,9 +31,12 @@
         .btn-donate:hover { background: rgba(16, 185, 129, 0.1); }
 
         .trade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
-        .trade-box { background: #1e293b; border-radius: 12px; padding: 12px; border: 1px solid #334155; display: flex; flex-direction: column; justify-content: space-between; }
-        .buy-title { color: #10b981; font-size: 14px; font-weight: bold; border-bottom: 1px solid #10b981; margin-bottom: 8px; }
-        .sell-title { color: #ef4444; font-size: 14px; font-weight: bold; border-bottom: 1px solid #ef4444; margin-bottom: 8px; }
+        .trade-box { background: #1e293b; border-radius: 12px; padding: 12px; border: 1px solid #334155; display: flex; flex-direction: column; justify-content: space-between; min-height: 100px; }
+        .social-title { color: #3b82f6; font-size: 14px; font-weight: bold; border-bottom: 1px solid #3b82f6; margin-bottom: 8px; text-transform: uppercase; }
+        .sell-title { color: #ef4444; font-size: 14px; font-weight: bold; border-bottom: 1px solid #ef4444; margin-bottom: 8px; text-transform: uppercase; }
+        
+        .btn-link { display: block; background: #334155; color: white; padding: 8px; border-radius: 8px; text-decoration: none; font-size: 11px; font-weight: bold; margin-top: 10px; transition: 0.3s; }
+        .btn-link:hover { background: #475569; }
         
         .btn-ston { display: block; background: #007aff; color: white; padding: 8px; border-radius: 8px; text-decoration: none; font-size: 11px; font-weight: bold; margin-top: 10px; }
         
@@ -77,9 +80,10 @@
 
     <div class="trade-grid">
         <div class="trade-box">
-            <div id="buy-label" class="buy-title">КУПЛЮ</div>
-            <div style="font-size: 11px; color: #94a3b8;">Active orders...</div>
+            <div id="social-label" class="social-title">МИ В СОЦМЕРЕЖАХ</div>
+            <a href="info.html" id="info-btn" class="btn-link">🔗 УСІ РЕСУРСИ</a>
         </div>
+        
         <div class="trade-box">
             <div id="sell-label" class="sell-title">ПРОДАМ</div>
             <a href="https://app.ston.fi/swap?ft=TON&tt=EQBrD-UZ8w2tAyxCNjO8lF4ioTwI-ELiQgF7kclC7gM2UOO_" target="_blank" id="ston-btn" class="btn-ston">TRADE ON STON.FI</a>
@@ -96,7 +100,8 @@
             starsTitle: "💎 Обмін Stars на UA",
             btn: "🚀 ПЕРЕЙТИ ДО БОТА",
             donate: "❤️ ПІДТРИМАТИ ПРОЕКТ",
-            buy: "КУПЛЮ",
+            social: "МИ В СОЦМЕРЕЖАХ",
+            info: "🔗 УСІ РЕСУРСИ",
             sell: "ПРОДАМ",
             ston: "ТОРГУВАТИ НА STON.FI",
             games: "🎮 ІГРИ ТА ЛОТЕРЕЯ UA",
@@ -110,7 +115,8 @@
             starsTitle: "💎 Exchange Stars for UA",
             btn: "🚀 GO TO BOT",
             donate: "❤️ SUPPORT PROJECT",
-            buy: "BUY",
+            social: "OUR SOCIALS",
+            info: "🔗 ALL RESOURCES",
             sell: "SELL",
             ston: "TRADE ON STON.FI",
             games: "🎮 GAMES & LOTTERY UA",
@@ -124,7 +130,8 @@
             starsTitle: "💎 Stars gegen UA tauschen",
             btn: "🚀 ZUM BOT GEHEN",
             donate: "❤️ PROJEKT UNTERSTÜTZEN",
-            buy: "KAUFEN",
+            social: "UNSERE SOZIALEN",
+            info: "🔗 ALLE RESSOURCEN",
             sell: "VERKAUFEN",
             ston: "AUF STON.FI HANDELN",
             games: "🎮 SPIELE & LOTTERIE UA",
@@ -138,7 +145,8 @@
             starsTitle: "💎 Échanger Stars contre UA",
             btn: "🚀 ALLER AU BOT",
             donate: "❤️ SOUTENIR LE PROJET",
-            buy: "ACHETER",
+            social: "NOS RÉSEAUX",
+            info: "🔗 TOUTES LES RESSOURCES",
             sell: "VENDRE",
             ston: "TRADER SUR STON.FI",
             games: "🎮 JEUX & LOTERIE UA",
@@ -154,7 +162,8 @@
         document.getElementById('stars-title').innerText = translations[lang].starsTitle;
         document.getElementById('btn-text').innerText = translations[lang].btn;
         document.getElementById('donate-text').innerText = translations[lang].donate;
-        document.getElementById('buy-label').innerText = translations[lang].buy;
+        document.getElementById('social-label').innerText = translations[lang].social;
+        document.getElementById('info-btn').innerText = translations[lang].info;
         document.getElementById('sell-label').innerText = translations[lang].sell;
         document.getElementById('ston-btn').innerText = translations[lang].ston;
         document.getElementById('games-btn').innerText = translations[lang].games;
