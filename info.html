@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UA HUB | Info</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #0b0f1a; color: #e2e8f0; margin: 0; padding: 0; text-align: center; }
+        .container { max-width: 500px; margin: 0 auto; padding: 20px; }
+        
+        .lang-switcher { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
+        .lang-btn { background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+
+        header { padding: 10px 0; }
+        h1 { color: #fff; font-size: 26px; margin-bottom: 5px; }
+        .subtitle { color: #94a3b8; font-size: 14px; margin-bottom: 25px; }
+
+        .category-title { font-size: 11px; text-transform: uppercase; color: #fbbf24; text-align: left; margin: 25px 0 10px 5px; letter-spacing: 1.5px; opacity: 0.8; }
+
+        .links-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+        
+        .link-card { 
+            background: #1e293b; border: 1px solid #334155; border-radius: 12px; 
+            padding: 14px 18px; text-decoration: none; color: #fff; font-weight: 500;
+            display: flex; align-items: center; transition: 0.3s; text-align: left;
+        }
+        .link-card:hover { background: #334155; border-color: #fbbf24; transform: scale(1.02); }
+        .icon { font-size: 20px; margin-right: 15px; width: 25px; text-align: center; }
+        
+        /* Кольори для іконок */
+        .tg { color: #24A1DE; }
+        .yt { color: #FF0000; }
+        .tt { color: #fff; }
+        .fb { color: #1877F2; }
+        .vb { color: #7360F2; }
+        .wa { color: #25D366; }
+        .dc { color: #5865F2; }
+        .rd { color: #ef4444; }
+
+        .back-link { display: inline-block; margin-top: 30px; color: #94a3b8; text-decoration: none; font-size: 14px; padding: 10px 20px; border: 1px solid #334155; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="lang-switcher">
+        <button class="lang-btn" onclick="setLang('uk')">🇺🇦 UA</button>
+        <button class="lang-btn" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" onclick="setLang('de')">🇩🇪 DE</button>
+        <button class="lang-btn" onclick="setLang('fr')">🇫🇷 FR</button>
+    </div>
+
+    <header>
+        <h1 id="title">UA HUB Info</h1>
+        <p id="subtitle" class="subtitle">Усі наші офіційні ресурси</p>
+    </header>
+
+    <div class="links-grid">
+        <div class="category-title" id="cat-tg">Telegram мережа</div>
+        <a href="https://t.me/uatokenkrypta" target="_blank" class="link-card"><span class="icon tg">💬</span> <span>Група UA Token</span></a>
+        <a href="https://t.me/uapublikgrup" target="_blank" class="link-card"><span class="icon tg">📹</span> <span>Канал UA Publik</span></a>
+        <a href="https://t.me/+Jne2t1clWuo4YTdi" target="_blank" class="link-card"><span class="icon tg">🎁</span> <span>UA Drop</span></a>
+        <a href="https://t.me/fondatioanu" target="_blank" class="link-card"><span class="icon tg">🏦</span> <span>UA Фонд</span></a>
+        <a href="https://t.me/+KsxMJ_C5HSQ0MDFi" target="_blank" class="link-card"><span class="icon tg">🧪</span> <span>UA Lab</span></a>
+
+        <div class="category-title" id="cat-web">Веб та Медіа</div>
+        <a href="https://babkiua.blogspot.com" target="_blank" class="link-card"><span class="icon tt">🖥</span> <span id="txt-site">Наш сайт</span></a>
+        <a href="https://youtube.com/@tokenua?si=QaRDWTTDBVWfUq_f" target="_blank" class="link-card"><span class="icon yt">▶️</span> <span>YouTube</span></a>
+        <a href="https://www.tiktok.com/@ua.pay?_r=1&_t=ZS-94AjJSYvFBM" target="_blank" class="link-card"><span class="icon tt">🎵</span> <span>TikTok</span></a>
+        <a href="https://listen4.myradio24.com/78073" target="_blank" class="link-card"><span class="icon rd">📻</span> <span id="txt-radio">Радіо Удвох</span></a>
+        <a href="https://www.fankolo.com/?ref=TokenUA" target="_blank" class="link-card"><span class="icon fb">🎡</span> <span>Fankolo</span></a>
+
+        <div class="category-title" id="cat-social">Соціальні мережі</div>
+        <a href="https://invite.viber.com/?g2=AQByuwGMsvm/J1WKDoDzP1zlXDyMl051sO4Qb0PnDPwTJ71/0tX2A2DVOLDLvzW" target="_blank" class="link-card"><span class="icon vb">📞</span> <span>Viber</span></a>
+        <a href="https://whatsapp.com/channel/0029Vb7YkAm5K3zMP9Eqsl3B" target="_blank" class="link-card"><span class="icon wa">📱</span> <span>WhatsApp</span></a>
+        <a href="https://discord.gg/QqeF5DGeP" target="_blank" class="link-card"><span class="icon dc">🎮</span> <span>Discord</span></a>
+        <a href="https://www.facebook.com/profile.php?id=61586664483741" target="_blank" class="link-card"><span class="icon fb">📘</span> <span>Facebook</span></a>
+    </div>
+
+    <a href="index.html" id="back-btn" class="back-link">← Повернутися до Хабу</a>
+</div>
+
+<script>
+    const translations = {
+        uk: {
+            title: "UA HUB Info",
+            subtitle: "Усі наші офіційні ресурси",
+            catTg: "Telegram мережа",
+            catWeb: "Веб та Медіа",
+            catSocial: "Соціальні мережі",
+            site: "Наш сайт",
+            radio: "Радіо Удвох",
+            back: "← Повернутися до Хабу"
+        },
+        en: {
+            title: "UA HUB Info",
+            subtitle: "All our official resources",
+            catTg: "Telegram Network",
+            catWeb: "Web & Media",
+            catSocial: "Social Networks",
+            site: "Our Website",
+            radio: "Radio Udvokh",
+            back: "← Back to HUB"
+        },
+        de: {
+            title: "UA HUB Info",
+            subtitle: "Alle unsere offiziellen Ressourcen",
+            catTg: "Telegram Netzwerk",
+            catWeb: "Web & Medien",
+            catSocial: "Soziale Netzwerke",
+            site: "Unsere Webseite",
+            radio: "Radio Udvokh",
+            back: "← Zurück zum HUB"
+        },
+        fr: {
+            title: "UA HUB Info",
+            subtitle: "Toutes nos ressources officielles",
+            catTg: "Réseau Telegram",
+            catWeb: "Web & Médias",
+            catSocial: "Réseaux Sociaux",
+            site: "Notre Site Web",
+            radio: "Radio Udvokh",
+            back: "← Retour au HUB"
+        }
+    };
+
+    function setLang(lang) {
+        document.getElementById('title').innerText = translations[lang].title;
+        document.getElementById('subtitle').innerText = translations[lang].subtitle;
+        document.getElementById('cat-tg').innerText = translations[lang].catTg;
+        document.getElementById('cat-web').innerText = translations[lang].catWeb;
+        document.getElementById('cat-social').innerText = translations[lang].catSocial;
+        document.getElementById('txt-site').innerText = translations[lang].site;
+        document.getElementById('txt-radio').innerText = translations[lang].radio;
+        document.getElementById('back-btn').innerText = translations[lang].back;
+    }
+</script>
+
+</body>
+</html>
