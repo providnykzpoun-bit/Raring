@@ -27,14 +27,15 @@
 
         .btn-bot { display: block; background: #fbbf24; color: #000; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; text-align: center; margin-bottom: 10px; }
         
-        /* Кнопка Донату */
         .btn-donate { display: block; background: transparent; color: #10b981; padding: 12px; border-radius: 12px; text-decoration: none; font-weight: bold; text-align: center; border: 1px solid #10b981; transition: 0.3s; }
         .btn-donate:hover { background: rgba(16, 185, 129, 0.1); }
 
         .trade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
-        .trade-box { background: #1e293b; border-radius: 12px; padding: 12px; border: 1px solid #334155; }
+        .trade-box { background: #1e293b; border-radius: 12px; padding: 12px; border: 1px solid #334155; display: flex; flex-direction: column; justify-content: space-between; }
         .buy-title { color: #10b981; font-size: 14px; font-weight: bold; border-bottom: 1px solid #10b981; margin-bottom: 8px; }
         .sell-title { color: #ef4444; font-size: 14px; font-weight: bold; border-bottom: 1px solid #ef4444; margin-bottom: 8px; }
+        
+        .btn-ston { display: block; background: #007aff; color: white; padding: 8px; border-radius: 8px; text-decoration: none; font-size: 11px; font-weight: bold; margin-top: 10px; }
         
         .games-link { display: block; background: #4f46e5; color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 15px; }
     </style>
@@ -71,18 +72,17 @@
         </div>
         
         <a href="https://t.me/Anketkaua_bot?start=sub167543" target="_blank" id="btn-text" class="btn-bot">🚀 ПЕРЕЙТИ ДО БОТА</a>
-        
         <a href="donate.html" id="donate-text" class="btn-donate">❤️ ПІДТРИМАТИ ПРОЕКТ</a>
     </div>
 
     <div class="trade-grid">
         <div class="trade-box">
             <div id="buy-label" class="buy-title">КУПЛЮ</div>
-            <div style="font-size: 11px;">Active orders...</div>
+            <div style="font-size: 11px; color: #94a3b8;">Active orders...</div>
         </div>
         <div class="trade-box">
             <div id="sell-label" class="sell-title">ПРОДАМ</div>
-            <div style="font-size: 11px;">Active orders...</div>
+            <a href="https://app.ston.fi/swap?ft=TON&tt=EQBrD-UZ8w2tAyxCNjO8lF4ioTwI-ELiQgF7kclC7gM2UOO_" target="_blank" id="ston-btn" class="btn-ston">TRADE ON STON.FI</a>
         </div>
     </div>
 
@@ -98,6 +98,7 @@
             donate: "❤️ ПІДТРИМАТИ ПРОЕКТ",
             buy: "КУПЛЮ",
             sell: "ПРОДАМ",
+            ston: "ТОРГУВАТИ НА STON.FI",
             games: "🎮 ІГРИ ТА ЛОТЕРЕЯ UA",
             steps: `<div><span class="step-num">1.</span> Натисніть кнопку та перейдіть у бот.</div>
                     <div><span class="step-num">2.</span> Оплатіть 1 Stars для входу в групу.</div>
@@ -111,6 +112,7 @@
             donate: "❤️ SUPPORT PROJECT",
             buy: "BUY",
             sell: "SELL",
+            ston: "TRADE ON STON.FI",
             games: "🎮 GAMES & LOTTERY UA",
             steps: `<div><span class="step-num">1.</span> Click the button to open the bot.</div>
                     <div><span class="step-num">2.</span> Pay 1 Stars to join the group.</div>
@@ -124,6 +126,7 @@
             donate: "❤️ PROJEKT UNTERSTÜTZEN",
             buy: "KAUFEN",
             sell: "VERKAUFEN",
+            ston: "AUF STON.FI HANDELN",
             games: "🎮 SPIELE & LOTTERIE UA",
             steps: `<div><span class="step-num">1.</span> Klicken Sie auf den Bot-Button.</div>
                     <div><span class="step-num">2.</span> Zahlen Sie 1 Stars für den Zugang.</div>
@@ -137,6 +140,7 @@
             donate: "❤️ SOUTENIR LE PROJET",
             buy: "ACHETER",
             sell: "VENDRE",
+            ston: "TRADER SUR STON.FI",
             games: "🎮 JEUX & LOTERIE UA",
             steps: `<div><span class="step-num">1.</span> Cliquez sur le bouton du bot.</div>
                     <div><span class="step-num">2.</span> Payez 1 Stars pour accéder au groupe.</div>
@@ -152,6 +156,7 @@
         document.getElementById('donate-text').innerText = translations[lang].donate;
         document.getElementById('buy-label').innerText = translations[lang].buy;
         document.getElementById('sell-label').innerText = translations[lang].sell;
+        document.getElementById('ston-btn').innerText = translations[lang].ston;
         document.getElementById('games-btn').innerText = translations[lang].games;
         document.getElementById('steps-list').innerHTML = translations[lang].steps;
     }
