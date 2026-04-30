@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UA Games Hub</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #0b0f1a; color: #e2e8f0; margin: 0; padding: 0; text-align: center; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        
+        .lang-switcher { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
+        .lang-btn { background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+        .lang-btn:hover { border-color: #4f46e5; }
+
+        header { padding: 10px 0; }
+        h1 { color: #fff; font-size: 28px; margin-bottom: 5px; }
+        .subtitle { color: #94a3b8; font-size: 14px; margin-bottom: 25px; }
+
+        .game-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: left; }
+        .game-card { 
+            background: linear-gradient(135deg, #1e293b, #0f172a); 
+            border: 1px solid #334155; border-radius: 15px; padding: 15px; 
+            display: flex; flex-direction: column; justify-content: space-between;
+            transition: 0.3s;
+        }
+        .game-card:hover { transform: translateY(-3px); border-color: #4f46e5; box-shadow: 0 5px 15px rgba(79, 70, 229, 0.2); }
+        
+        .game-name { font-weight: bold; font-size: 16px; color: #fff; margin-bottom: 5px; display: block; }
+        .game-desc { font-size: 12px; color: #94a3b8; line-height: 1.4; margin-bottom: 15px; flex-grow: 1; }
+        
+        .btn-play { 
+            display: block; background: #4f46e5; color: white; padding: 10px; 
+            border-radius: 8px; text-decoration: none; font-weight: bold; 
+            font-size: 13px; text-align: center; transition: 0.3s;
+        }
+        .btn-play:hover { background: #4338ca; }
+
+        .golden-card { grid-column: span 2; border: 1px solid #fbbf24; background: linear-gradient(135deg, #1e293b, #2d230a); }
+        .golden-card .game-name { color: #fbbf24; }
+        .golden-card .btn-play { background: #fbbf24; color: #000; }
+
+        .back-link { display: inline-block; margin-top: 30px; color: #94a3b8; text-decoration: none; font-size: 14px; padding: 10px 20px; border: 1px solid #334155; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="lang-switcher">
+        <button class="lang-btn" onclick="setLang('uk')">🇺🇦 UA</button>
+        <button class="lang-btn" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" onclick="setLang('de')">🇩🇪 DE</button>
+        <button class="lang-btn" onclick="setLang('fr')">🇫🇷 FR</button>
+    </div>
+
+    <header>
+        <h1 id="main-title">UA Games Hub</h1>
+        <p id="main-subtitle" class="subtitle">Грай та заробляй UA Token</p>
+    </header>
+
+    <div class="game-grid">
+        <div class="game-card golden-card">
+            <div>
+                <span class="game-name">🏆 Golden Hub</span>
+                <p class="game-desc" id="desc-golden">Елітний ігровий центр для справжніх майстрів.</p>
+            </div>
+            <a href="http://t.me/Igrulbot_bot" target="_blank" class="btn-play" id="play-golden">ГРАТИ ЗАРАЗ</a>
+        </div>
+
+        <div class="game-card">
+            <div>
+                <span class="game-name">👨‍🌾 Тарас</span>
+                <p class="game-desc" id="desc-taras">Легендарна гра про Тараса.</p>
+            </div>
+            <a href="http://t.me/Tarasgra_bot" target="_blank" class="btn-play">PLAY</a>
+        </div>
+
+        <div class="game-card">
+            <div>
+                <span class="game-name">🗺️ Бродилка</span>
+                <p class="game-desc" id="desc-brodilka">Пригоди та пошук скарбів UA.</p>
+            </div>
+            <a href="http://t.me/Brodilkaua_bot" target="_blank" class="btn-play">PLAY</a>
+        </div>
+
+        <div class="game-card">
+            <div>
+                <span class="game-name">🖱️ Тапатка</span>
+                <p class="game-desc" id="desc-tapatka">Клікай та накопичуй баланс.</p>
+            </div>
+            <a href="http://t.me/Uapay_bot" target="_blank" class="btn-play">PLAY</a>
+        </div>
+
+        <div class="game-card">
+            <div>
+                <span class="game-name">🎟️ Лотерея UA</span>
+                <p class="game-desc" id="desc-lotto">Твій шанс на великий джекпот.</p>
+            </div>
+            <a href="http://t.me/Zagadkiua_bot" target="_blank" class="btn-play">PLAY</a>
+        </div>
+
+        <div class="game-card">
+            <div>
+                <span class="game-name">🚜 Танк ОУН</span>
+                <p class="game-desc" id="desc-tank">Бойовий дух та перемоги.</p>
+            </div>
+            <a href="http://t.me/Zsudonat_bot" target="_blank" class="btn-play">PLAY</a>
+        </div>
+    </div>
+
+    <a href="index.html" id="back-btn" class="back-link">← Повернутися до Хабу</a>
+</div>
+
+<script>
+    const translations = {
+        uk: {
+            subtitle: "Грай та заробляй UA Token",
+            golden: "Елітний ігровий центр для справжніх майстрів.",
+            taras: "Легендарна гра про Тараса.",
+            brodilka: "Пригоди та пошук скарбів UA.",
+            tapatka: "Клікай та накопичуй баланс.",
+            lotto: "Твій шанс на великий джекпот.",
+            tank: "Бойовий дух та перемоги.",
+            play: "ГРАТИ ЗАРАЗ",
+            back: "← Повернутися до Хабу"
+        },
+        en: {
+            subtitle: "Play and Earn UA Token",
+            golden: "Elite gaming center for true masters.",
+            taras: "Legendary game about Taras.",
+            brodilka: "Adventures and UA treasure hunts.",
+            tapatka: "Click and build your balance.",
+            lotto: "Your chance for a big jackpot.",
+            tank: "Battle spirit and victories.",
+            play: "PLAY NOW",
+            back: "← Back to HUB"
+        },
+        de: {
+            subtitle: "Spielen und UA Token verdienen",
+            golden: "Elite-Spielzentrum für wahre Meister.",
+            taras: "Legendäres Spiel über Taras.",
+            brodilka: "Abenteuer und UA-Schatzsuche.",
+            tapatka: "Klicken und Guthaben aufbauen.",
+            lotto: "Deine Chance auf den Jackpot.",
+            tank: "Kampfgeist und Siege.",
+            play: "JETZT SPIELEN",
+            back: "← Zurück zum HUB"
+        },
+        fr: {
+            subtitle: "Jouez et gagnez des UA Token",
+            golden: "Centre de jeu d'élite pour les maîtres.",
+            taras: "Jeu légendaire sur Taras.",
+            brodilka: "Aventures et chasses au trésor UA.",
+            tapatka: "Cliquez et accumulez du solde.",
+            lotto: "Votre chance pour le jackpot.",
+            tank: "Esprit de combat et victoires.",
+            play: "JOUER MAINTENANT",
+            back: "← Retour au HUB"
+        }
+    };
+
+    function setLang(lang) {
+        document.getElementById('main-subtitle').innerText = translations[lang].subtitle;
+        document.getElementById('desc-golden').innerText = translations[lang].golden;
+        document.getElementById('desc-taras').innerText = translations[lang].taras;
+        document.getElementById('desc-brodilka').innerText = translations[lang].brodilka;
+        document.getElementById('desc-tapatka').innerText = translations[lang].tapatka;
+        document.getElementById('desc-lotto').innerText = translations[lang].lotto;
+        document.getElementById('desc-tank').innerText = translations[lang].tank;
+        document.querySelectorAll('.btn-play').forEach(btn => btn.innerText = translations[lang].play);
+        document.getElementById('back-btn').innerText = translations[lang].back;
+    }
+</script>
+
+</body>
+</html>
