@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support UA HUB</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #0b0f1a; color: #e2e8f0; margin: 0; padding: 0; text-align: center; }
+        .container { max-width: 500px; margin: 0 auto; padding: 20px; }
+        
+        .lang-switcher { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
+        .lang-btn { background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; transition: 0.3s; }
+        .lang-btn:hover { border-color: #fbbf24; }
+
+        header { padding: 10px 0; }
+        h1 { color: #fff; font-size: 28px; margin: 10px 0; }
+        .appeal { background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 12px; font-size: 14px; line-height: 1.6; margin-bottom: 25px; border-left: 4px solid #fbbf24; text-align: left; }
+
+        .section-title { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #94a3b8; margin: 20px 0 10px; text-align: left; }
+
+        .donate-grid { display: flex; flex-direction: column; gap: 10px; }
+        .donate-btn { display: flex; align-items: center; justify-content: center; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 16px; transition: 0.3s; color: white; }
+
+        .privat { background: #74b944; }
+        .mono { background: #000; border: 1px solid #333; }
+        .obank { background: #ff5722; }
+        .rocket { background: linear-gradient(90deg, #1d9bf0, #0072b1); }
+        .cryptobot { background: #3498db; }
+        .icrypto { background: #6c5ce7; }
+
+        .wallet-box { background: #1e293b; border: 1px solid #334155; padding: 15px; border-radius: 12px; margin-top: 10px; }
+        .address-text { font-family: monospace; font-size: 12px; color: #fbbf24; word-break: break-all; background: #0f172a; padding: 10px; border-radius: 8px; display: block; margin-bottom: 10px; }
+        .copy-btn { background: #fbbf24; color: #000; border: none; padding: 10px; border-radius: 20px; font-weight: bold; cursor: pointer; width: 100%; }
+
+        .contact-section { margin-top: 30px; padding: 15px; border-radius: 12px; background: rgba(59, 130, 246, 0.1); }
+        .bot-btn { display: inline-block; color: #3b82f6; text-decoration: none; font-weight: bold; padding: 8px 20px; border-radius: 30px; border: 1px solid #3b82f6; margin-top: 5px; }
+
+        .back-link { display: inline-block; margin-top: 30px; color: #94a3b8; text-decoration: none; font-size: 14px; padding: 10px 20px; border: 1px solid #334155; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="lang-switcher">
+        <button class="lang-btn" onclick="setLang('uk')">🇺🇦 UA</button>
+        <button class="lang-btn" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" onclick="setLang('de')">🇩🇪 DE</button>
+        <button class="lang-btn" onclick="setLang('fr')">🇫🇷 FR</button>
+    </div>
+
+    <header>
+        <h1>UA HUB Support</h1>
+        <div id="appeal-text" class="appeal">
+            🇺🇦 <b>Підтримай розвиток!</b> Твій донат допомагає нам покращувати сервіси UA HUB та запускати нові проекти. Дякуємо за довіру!
+        </div>
+    </header>
+
+    <div class="section-title" id="title-ton">Прямий переказ TON</div>
+    <div class="wallet-box">
+        <span class="address-text" id="tonAddr">UQAW61rqX6gJLIzO_opjyxTtrMB9Z9q1k1mFpTcgPcDAr5cz</span>
+        <button id="copy-btn-text" class="copy-btn" onclick="copyAddress()">📋 Скопіювати адресу</button>
+    </div>
+
+    <div class="section-title" id="title-bank">Банківські перекази</div>
+    <div class="donate-grid">
+        <a href="https://send.monobank.ua/jar/ALGbQ8CaYU" target="_blank" class="donate-btn mono">🐱 Monobank</a>
+        <a href="https://www.privat24.ua/send/i0qz3" target="_blank" class="donate-btn privat">💳 Privat24</a>
+        <a href="https://pay.obank.com.ua/payment?type=skrynka&uuid=4B45E725-F5D1-4BF6-9CDD-2E81C98074C7" target="_blank" class="donate-btn obank">📦 OBank</a>
+    </div>
+
+    <div class="section-title" id="title-crypto">Крипто-чеки</div>
+    <div class="donate-grid">
+        <a href="https://t.me/xrocket?start=inv_4GEr2pZVc5eeBhf" target="_blank" class="donate-btn rocket">🚀 xRocket</a>
+        <a href="http://t.me/send?start=IV8OFNV4FVSF" target="_blank" class="donate-btn cryptobot">💎 Crypto Bot</a>
+    </div>
+
+    <div class="contact-section">
+        <p id="contact-text" style="font-size: 13px; margin: 0;">Маєте ідеї для проекту?</p>
+        <a href="http://t.me/Leslav_bot" target="_blank" id="bot-btn-text" class="bot-btn">📩 Написати в редакцію</a>
+    </div>
+
+    <a href="index.html" id="back-btn" class="back-link">← Назад до Хабу</a>
+</div>
+
+<script>
+    const translations = {
+        uk: {
+            appeal: "🇺🇦 <b>Підтримай розвиток!</b> Твій донат допомагає нам покращувати сервіси UA HUB та запускати нові проекти. Дякуємо за довіру!",
+            ton: "Прямий переказ TON",
+            bank: "Банківські перекази",
+            crypto: "Крипто-чеки",
+            copy: "📋 Скопіювати адресу",
+            copied: "✅ Скопійовано!",
+            contact: "Маєте ідеї для проекту?",
+            bot: "📩 Написати в редакцію",
+            back: "← Назад до Хабу"
+        },
+        en: {
+            appeal: "🇺🇸 <b>Support the development!</b> Your donation helps us improve UA HUB services and launch new projects. Thank you for your trust!",
+            ton: "Direct TON Transfer",
+            bank: "Bank Transfers",
+            crypto: "Crypto Checks",
+            copy: "📋 Copy Address",
+            copied: "✅ Copied!",
+            contact: "Have ideas for the project?",
+            bot: "📩 Contact Editorial",
+            back: "← Back to HUB"
+        },
+        de: {
+            appeal: "🇩🇪 <b>Unterstützen Sie die Entwicklung!</b> Ihre Spende hilft uns, die UA HUB-Dienste zu verbessern. Vielen Dank für Ihr Vertrauen!",
+            ton: "Direkte TON-Überweisung",
+            bank: "Banküberweisungen",
+            crypto: "Krypto-Schecks",
+            copy: "📋 Adresse kopieren",
+            copied: "✅ Kopiert!",
+            contact: "Haben Sie Ideen für das Projekt?",
+            bot: "📩 Redaktion kontaktieren",
+            back: "← Zurück zum HUB"
+        },
+        fr: {
+            appeal: "🇫🇷 <b>Soutenez le développement !</b> Votre don nous aide à améliorer les services d'UA HUB. Merci pour votre confiance !",
+            ton: "Transfert TON direct",
+            bank: "Virements bancaires",
+            crypto: "Chèques crypto",
+            copy: "📋 Copier l'adresse",
+            copied: "✅ Copié !",
+            contact: "Vous avez des idées pour le projet ?",
+            bot: "📩 Contacter la rédaction",
+            back: "← Retour au HUB"
+        }
+    };
+
+    let currentLang = 'uk';
+
+    function setLang(lang) {
+        currentLang = lang;
+        document.getElementById('appeal-text').innerHTML = translations[lang].appeal;
+        document.getElementById('title-ton').innerText = translations[lang].ton;
+        document.getElementById('title-bank').innerText = translations[lang].bank;
+        document.getElementById('title-crypto').innerText = translations[lang].crypto;
+        document.getElementById('copy-btn-text').innerText = translations[lang].copy;
+        document.getElementById('contact-text').innerText = translations[lang].contact;
+        document.getElementById('bot-btn-text').innerText = translations[lang].bot;
+        document.getElementById('back-btn').innerText = translations[lang].back;
+    }
+
+    function copyAddress() {
+        const addr = document.getElementById('tonAddr').innerText;
+        navigator.clipboard.writeText(addr).then(() => {
+            const btn = document.getElementById('copy-btn-text');
+            btn.innerText = translations[currentLang].copied;
+            setTimeout(() => { btn.innerText = translations[currentLang].copy; }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
