@@ -2,7 +2,7 @@ function loadAds() {
     const adContainer = document.getElementById('ad-space');
     if (!adContainer) return;
 
-    // Тільки ваші нові позиції для ротації
+    // Ваші актуальні рекламні позиції
     const ads = [
         {
             title: "💰 Зароби на каналі!",
@@ -36,25 +36,28 @@ function loadAds() {
         }
     ];
 
-    // Рандомайзер вибору
+    // Вибір випадкової реклами
     const randomAd = ads[Math.floor(Math.random() * ads.length)];
 
-    // HTML код рекламного блоку
+    // HTML код з блоком замовлення реклами зверху
     const adContent = `
-        <div style="background: linear-gradient(135deg, #1e293b, #0f172a); 
-                    border: 1px dashed #fbbf24; 
-                    padding: 15px; 
-                    border-radius: 12px; 
-                    margin: 20px 0; 
-                    text-align: center;
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-            <div style="color: #fbbf24; font-size: 10px; text-transform: uppercase; margin-bottom: 8px; font-weight: bold; letter-spacing: 1px;">
-                ${randomAd.label}
+        <div style="margin: 20px 0; border-radius: 12px; overflow: hidden; border: 1px solid #334155; background: #111827;">
+            <div style="background: #1e293b; padding: 8px 15px; border-bottom: 1px solid #334155; display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase;">Реклама в боті</span>
+                <a href="http://t.me/tokenpist_bot" target="_blank" style="color: #fbbf24; font-size: 11px; text-decoration: none; font-weight: bold;">
+                    Замовити 📩
+                </a>
             </div>
-            <a href="${randomAd.link}" target="_blank" style="text-decoration: none;">
-                <div style="color: #fff; font-weight: bold; font-size: 16px; margin-bottom: 5px;">${randomAd.title}</div>
-                <div style="color: #94a3b8; font-size: 12px;">${randomAd.text}</div>
-            </a>
+
+            <div style="background: linear-gradient(135deg, #1e293b, #0f172a); padding: 18px; text-align: center;">
+                <div style="color: #fbbf24; font-size: 10px; text-transform: uppercase; margin-bottom: 8px; font-weight: bold; letter-spacing: 1px;">
+                    ${randomAd.label}
+                </div>
+                <a href="${randomAd.link}" target="_blank" style="text-decoration: none;">
+                    <div style="color: #fff; font-weight: bold; font-size: 17px; margin-bottom: 5px;">${randomAd.title}</div>
+                    <div style="color: #94a3b8; font-size: 13px;">${randomAd.text}</div>
+                </a>
+            </div>
         </div>
     `;
 
