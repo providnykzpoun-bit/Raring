@@ -2,13 +2,13 @@ function loadAds() {
     const adContainer = document.getElementById('ad-space');
     if (!adContainer) return;
 
-    // Масив з 5 варіантами реклами
+    // Масив з 5 варіантами реклами (включаючи нове посилання)
     const ads = [
         {
-            title: "🚀 Заробляй UA Token разом з Piar Bot!",
-            text: "Виконуй прості завдання та отримуй винагороду вже зараз.",
-            link: "http://t.me/Piarpiarpiar_bot",
-            label: "ЗАРОБІТОК"
+            title: "💰 Заробіток на каналі!",
+            text: "Приєднуйся та заробляй прямо зараз через нашого офіційного бота.",
+            link: "https://t.me/adm1notekabot?start=89b99e54-648a-49c1-912f-7b06b86543e6",
+            label: "НОВА МОЖЛИВІСТЬ"
         },
         {
             title: "🔄 Швидкий обмін в LeslaSwap!",
@@ -17,16 +17,16 @@ function loadAds() {
             label: "ОБМІННИК"
         },
         {
+            title: "🚀 UA Piar Bot — заробляй UA!",
+            text: "Виконуй прості завдання в Telegram та отримуй токени.",
+            link: "http://t.me/Piarpiarpiar_bot",
+            label: "ЗАРОБІТОК"
+        },
+        {
             title: "📊 Слідкуй за графіком UA Token!",
             text: "Будь у курсі всіх змін ціни на DEXTools. Не прогав момент!",
             link: "https://www.dextools.io/app/en/ton/pair-explorer/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9",
             label: "ТРЕЙДИНГ"
-        },
-        {
-            title: "🎁 Отримуй UA Drop!",
-            text: "Приєднуйся до нашої спільноти та бери участь у розіграшах.",
-            link: "https://t.me/+Jne2t1clWuo4YTdi",
-            label: "AIRDROP"
         },
         {
             title: "🎮 Ігри та Лотерея UA HUB!",
