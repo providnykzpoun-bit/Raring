@@ -39,6 +39,9 @@
         .earn { color: #10b981; }
         .swap { color: #fbbf24; }
 
+        /* Стиль для контейнера реклами */
+        #ad-space { width: 100%; margin: 15px 0; }
+
         .back-link { display: inline-block; margin-top: 30px; color: #94a3b8; text-decoration: none; font-size: 14px; padding: 10px 20px; border: 1px solid #334155; border-radius: 10px; }
     </style>
 </head>
@@ -57,6 +60,8 @@
         <h1 id="title">UA HUB Info</h1>
         <p id="subtitle" class="subtitle">Усі наші офіційні ресурси</p>
     </header>
+
+    <div id="ad-space"></div>
 
     <div class="links-grid">
         <div class="category-title" id="cat-earn">Заробіток та Обмін</div>
@@ -94,86 +99,37 @@
 <script>
     const translations = {
         uk: {
-            title: "UA HUB Info",
-            subtitle: "Усі наші офіційні ресурси",
-            catEarn: "Заробіток та Обмін",
-            swapBot: "Обмінник UA (LeslaSwap)",
-            earnBot: "Заробити UA (Piar Bot)",
-            catTg: "Telegram мережа",
-            catWeb: "Веб та Медіа",
-            catSocial: "Соціальні мережі",
-            site: "Наш сайт",
-            radio: "Радіо Удвох",
-            back: "← Повернутися до Хабу"
+            title: "UA HUB Info", subtitle: "Усі наші офіційні ресурси",
+            catEarn: "Заробіток та Обмін", swapBot: "Обмінник UA (LeslaSwap)", earnBot: "Заробити UA (Piar Bot)",
+            catTg: "Telegram мережа", catWeb: "Веб та Медіа", catSocial: "Соціальні мережі",
+            site: "Наш сайт", radio: "Радіо Удвох", back: "← Повернутися до Хабу"
         },
         en: {
-            title: "UA HUB Info",
-            subtitle: "All our official resources",
-            catEarn: "Earning & Swap",
-            swapBot: "UA Exchanger (LeslaSwap)",
-            earnBot: "Earn UA (Piar Bot)",
-            catTg: "Telegram Network",
-            catWeb: "Web & Media",
-            catSocial: "Social Networks",
-            site: "Our Website",
-            radio: "Radio Udvokh",
-            back: "← Back to HUB"
+            title: "UA HUB Info", subtitle: "All our official resources",
+            catEarn: "Earning & Swap", swapBot: "UA Exchanger (LeslaSwap)", earnBot: "Earn UA (Piar Bot)",
+            catTg: "Telegram Network", catWeb: "Web & Media", catSocial: "Social Networks",
+            site: "Our Website", radio: "Radio Udvokh", back: "← Back to HUB"
         },
         pl: {
-            title: "UA HUB Info",
-            subtitle: "Wszystkie nasze oficjalne zasoby",
-            catEarn: "Zarabianie i Wymiana",
-            swapBot: "Kantor UA (LeslaSwap)",
-            earnBot: "Zarabiaj UA (Piar Bot)",
-            catTg: "Sieć Telegram",
-            catWeb: "Sieć i Media",
-            catSocial: "Sieci społecznościowe",
-            site: "Nasza strona",
-            radio: "Radio Udvokh",
-            back: "← Powrót do HUB"
+            title: "UA HUB Info", subtitle: "Wszystkie nasze oficjalne zasoby",
+            catEarn: "Zarabianie i Wymiana", swapBot: "Kantor UA (LeslaSwap)", earnBot: "Zarabiaj UA (Piar Bot)",
+            catTg: "Sieć Telegram", catWeb: "Sieć i Media", catSocial: "Sieci społecznościowe",
+            site: "Nasza strona", radio: "Radio Udvokh", back: "← Powrót do HUB"
         },
         de: {
-            title: "UA HUB Info",
-            subtitle: "Alle unsere offiziellen Ressourcen",
-            catEarn: "Verdienst & Tausch",
-            swapBot: "UA Wechsler (LeslaSwap)",
-            earnBot: "UA verdienen (Piar Bot)",
-            catTg: "Telegram Netzwerk",
-            catWeb: "Web & Medien",
-            catSocial: "Soziale Netzwerke",
-            site: "Unsere Webseite",
-            radio: "Radio Udvokh",
-            back: "← Zurück zum HUB"
+            title: "UA HUB Info", subtitle: "Alle unsere offiziellen Ressourcen",
+            catEarn: "Verdienst & Tausch", swapBot: "UA Wechsler (LeslaSwap)", earnBot: "UA verdienen (Piar Bot)",
+            catTg: "Telegram Netzwerk", catWeb: "Web & Medien", catSocial: "Soziale Netzwerke",
+            site: "Unsere Webseite", radio: "Radio Udvokh", back: "← Zurück zum HUB"
         },
         fr: {
-            title: "UA HUB Info",
-            subtitle: "Toutes nos ressources officielles",
-            catEarn: "Gains & Échange",
-            swapBot: "Changeur UA (LeslaSwap)",
-            earnBot: "Gagner des UA (Piar Bot)",
-            catTg: "Réseau Telegram",
-            catWeb: "Web & Médias",
-            catSocial: "Réseaux Sociaux",
-            site: "Notre Site Web",
-            radio: "Radio Udvokh",
-            back: "← Retour au HUB"
+            title: "UA HUB Info", subtitle: "Toutes nos ressources officielles",
+            catEarn: "Gains & Échange", swapBot: "Changeur UA (LeslaSwap)", earnBot: "Gagner des UA (Piar Bot)",
+            catTg: "Réseau Telegram", catWeb: "Web & Médias", catSocial: "Réseaux Sociaux",
+            site: "Notre Site Web", radio: "Radio Udvokh", back: "← Retour au HUB"
         }
     };
 
     function setLang(lang) {
         document.getElementById('title').innerText = translations[lang].title;
-        document.getElementById('subtitle').innerText = translations[lang].subtitle;
-        document.getElementById('cat-earn').innerText = translations[lang].catEarn;
-        document.getElementById('txt-swap-bot').innerText = translations[lang].swapBot;
-        document.getElementById('txt-earn-bot').innerText = translations[lang].earnBot;
-        document.getElementById('cat-tg').innerText = translations[lang].catTg;
-        document.getElementById('cat-web').innerText = translations[lang].catWeb;
-        document.getElementById('cat-social').innerText = translations[lang].catSocial;
-        document.getElementById('txt-site').innerText = translations[lang].site;
-        document.getElementById('txt-radio').innerText = translations[lang].radio;
-        document.getElementById('back-btn').innerText = translations[lang].back;
-    }
-</script>
-
-</body>
-</html>
+        document.getElementById('
