@@ -2,7 +2,7 @@ function loadAds() {
     const adContainer = document.getElementById('ad-space');
     if (!adContainer) return;
 
-    // Масив з 5 варіантами реклами (включаючи нове посилання)
+    // 1. СПИСОК РЕКЛАМНИХ ПОЗИЦІЙ (Ротація)
     const ads = [
         {
             title: "💰 Заробіток на каналі!",
@@ -18,13 +18,13 @@ function loadAds() {
         },
         {
             title: "🚀 UA Piar Bot — заробляй UA!",
-            text: "Виконуй прості завдання в Telegram та отримуй токени.",
+            text: "Виконуй прості завдання та отримуй токени.",
             link: "http://t.me/Piarpiarpiar_bot",
             label: "ЗАРОБІТОК"
         },
         {
             title: "📊 Слідкуй за графіком UA Token!",
-            text: "Будь у курсі всіх змін ціни на DEXTools. Не прогав момент!",
+            text: "Будь у курсі всіх змін ціни на DEXTools.",
             link: "https://www.dextools.io/app/en/ton/pair-explorer/EQDqC7e4o5pzIWm3PfDQr3l96epyBezSn7dPjpCJ8GwAwnh9",
             label: "ТРЕЙДИНГ"
         },
@@ -36,19 +36,35 @@ function loadAds() {
         }
     ];
 
-    // Вибираємо випадкову рекламу зі списку
     const randomAd = ads[Math.floor(Math.random() * ads.length)];
 
-    // Створюємо HTML-код банера
-    const adContent = `
+    // 2. ВЕСЬ КОД (Перекладач + Реклама)
+    const fullContent = `
+        <div id="ua-hub-translator" style="text-align: center; background: #1a1a1a; padding: 15px; border-radius: 12px; border: 1px solid #334155; margin-bottom: 15px;">
+            <style>
+                .lang-btn-blog {
+                    background: #2d3748; border: 1px solid #4a5568; color: white;
+                    padding: 8px 10px; border-radius: 6px; cursor: pointer;
+                    font-size: 13px; margin: 3px; display: inline-block; transition: 0.2s;
+                }
+                .lang-btn-blog:hover { border-color: #fbbf24; background: #4a5568; }
+                #google_translate_element, .skiptranslate { display: none !important; }
+                body { top: 0 !important; }
+            </style>
+            <div style="color: #fbbf24; font-size: 11px; margin-bottom: 10px; font-weight: bold; letter-spacing: 1px;">UA HUB TRANSLATE</div>
+            <div class="lang-buttons">
+                <button class="lang-btn-blog" onclick="changeLang('uk')">🇺🇦 UA</button>
+                <button class="lang-btn-blog" onclick="changeLang('en')">🇺🇸 EN</button>
+                <button class="lang-btn-blog" onclick="changeLang('de')">🇩🇪 DE</button>
+                <button class="lang-btn-blog" onclick="changeLang('fr')">🇫🇷 FR</button>
+            </div>
+            <div id="google_translate_element"></div>
+        </div>
+
         <div style="background: linear-gradient(135deg, #1e293b, #0f172a); 
-                    border: 1px dashed #fbbf24; 
-                    padding: 15px; 
-                    border-radius: 12px; 
-                    margin: 20px 0; 
-                    text-align: center;
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-            <div style="color: #fbbf24; font-size: 10px; text-transform: uppercase; margin-bottom: 8px; font-weight: bold; letter-spacing: 1px;">
+                    border: 1px dashed #fbbf24; padding: 15px; border-radius: 12px; 
+                    text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+            <div style="color: #fbbf24; font-size: 10px; text-transform: uppercase; margin-bottom: 8px; font-weight: bold;">
                 ${randomAd.label}
             </div>
             <a href="${randomAd.link}" target="_blank" style="text-decoration: none;">
@@ -58,8 +74,32 @@ function loadAds() {
         </div>
     `;
 
-    adContainer.innerHTML = adContent;
+    adContainer.innerHTML = fullContent;
+
+    // Підключаємо скрипт Google Translate, якщо його ще немає
+    if (!window.googleTranslateElementInit) {
+        const script = document.createElement('script');
+        script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        document.body.appendChild(script);
+    }
 }
 
-// Запускаємо при завантаженні
+// Функції для перекладу
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'uk',
+        autoDisplay: false
+    }, 'google_translate_element');
+}
+
+function changeLang(langCode) {
+    var select = document.querySelector('select.goog-te-combo');
+    if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+    } else {
+        setTimeout(function() { changeLang(langCode); }, 500);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', loadAds);
