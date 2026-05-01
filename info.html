@@ -8,8 +8,9 @@
         body { font-family: 'Segoe UI', sans-serif; background: #0b0f1a; color: #e2e8f0; margin: 0; padding: 0; text-align: center; }
         .container { max-width: 500px; margin: 0 auto; padding: 20px; }
         
-        .lang-switcher { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
+        .lang-switcher { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
         .lang-btn { background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+        .lang-btn:hover { border-color: #fbbf24; }
 
         header { padding: 10px 0; }
         h1 { color: #fff; font-size: 26px; margin-bottom: 5px; }
@@ -36,6 +37,7 @@
         .dc { color: #5865F2; }
         .rd { color: #ef4444; }
         .earn { color: #10b981; }
+        .swap { color: #fbbf24; }
 
         .back-link { display: inline-block; margin-top: 30px; color: #94a3b8; text-decoration: none; font-size: 14px; padding: 10px 20px; border: 1px solid #334155; border-radius: 10px; }
     </style>
@@ -46,6 +48,7 @@
     <div class="lang-switcher">
         <button class="lang-btn" onclick="setLang('uk')">🇺🇦 UA</button>
         <button class="lang-btn" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" onclick="setLang('pl')">🇵🇱 PL</button>
         <button class="lang-btn" onclick="setLang('de')">🇩🇪 DE</button>
         <button class="lang-btn" onclick="setLang('fr')">🇫🇷 FR</button>
     </div>
@@ -56,7 +59,10 @@
     </header>
 
     <div class="links-grid">
-        <div class="category-title" id="cat-earn">Можливості заробітку</div>
+        <div class="category-title" id="cat-earn">Заробіток та Обмін</div>
+        <a href="http://t.me/Leslaswap_bot" target="_blank" class="link-card">
+            <span class="icon swap">🔄</span> <span id="txt-swap-bot">Обмінник UA (LeslaSwap)</span>
+        </a>
         <a href="http://t.me/Piarpiarpiar_bot" target="_blank" class="link-card">
             <span class="icon earn">💰</span> <span id="txt-earn-bot">Заробити UA (Piar Bot)</span>
         </a>
@@ -90,7 +96,8 @@
         uk: {
             title: "UA HUB Info",
             subtitle: "Усі наші офіційні ресурси",
-            catEarn: "Можливості заробітку",
+            catEarn: "Заробіток та Обмін",
+            swapBot: "Обмінник UA (LeslaSwap)",
             earnBot: "Заробити UA (Piar Bot)",
             catTg: "Telegram мережа",
             catWeb: "Веб та Медіа",
@@ -102,7 +109,8 @@
         en: {
             title: "UA HUB Info",
             subtitle: "All our official resources",
-            catEarn: "Earning Opportunities",
+            catEarn: "Earning & Swap",
+            swapBot: "UA Exchanger (LeslaSwap)",
             earnBot: "Earn UA (Piar Bot)",
             catTg: "Telegram Network",
             catWeb: "Web & Media",
@@ -111,10 +119,24 @@
             radio: "Radio Udvokh",
             back: "← Back to HUB"
         },
+        pl: {
+            title: "UA HUB Info",
+            subtitle: "Wszystkie nasze oficjalne zasoby",
+            catEarn: "Zarabianie i Wymiana",
+            swapBot: "Kantor UA (LeslaSwap)",
+            earnBot: "Zarabiaj UA (Piar Bot)",
+            catTg: "Sieć Telegram",
+            catWeb: "Sieć i Media",
+            catSocial: "Sieci społecznościowe",
+            site: "Nasza strona",
+            radio: "Radio Udvokh",
+            back: "← Powrót do HUB"
+        },
         de: {
             title: "UA HUB Info",
             subtitle: "Alle unsere offiziellen Ressourcen",
-            catEarn: "Verdienstmöglichkeiten",
+            catEarn: "Verdienst & Tausch",
+            swapBot: "UA Wechsler (LeslaSwap)",
             earnBot: "UA verdienen (Piar Bot)",
             catTg: "Telegram Netzwerk",
             catWeb: "Web & Medien",
@@ -126,7 +148,8 @@
         fr: {
             title: "UA HUB Info",
             subtitle: "Toutes nos ressources officielles",
-            catEarn: "Opportunités de gain",
+            catEarn: "Gains & Échange",
+            swapBot: "Changeur UA (LeslaSwap)",
             earnBot: "Gagner des UA (Piar Bot)",
             catTg: "Réseau Telegram",
             catWeb: "Web & Médias",
@@ -141,6 +164,7 @@
         document.getElementById('title').innerText = translations[lang].title;
         document.getElementById('subtitle').innerText = translations[lang].subtitle;
         document.getElementById('cat-earn').innerText = translations[lang].catEarn;
+        document.getElementById('txt-swap-bot').innerText = translations[lang].swapBot;
         document.getElementById('txt-earn-bot').innerText = translations[lang].earnBot;
         document.getElementById('cat-tg').innerText = translations[lang].catTg;
         document.getElementById('cat-web').innerText = translations[lang].catWeb;
