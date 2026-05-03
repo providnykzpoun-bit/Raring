@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UA HUB | Ігри та Лотерея</title>
+    <title>UA HUB | Ігри та Розваги</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background: #0b0f1a; color: #e2e8f0; margin: 0; padding: 0; text-align: center; }
         .container { max-width: 500px; margin: 0 auto; padding: 20px; }
@@ -16,23 +16,21 @@
         h1 { color: #fff; font-size: 26px; margin-bottom: 5px; }
         .subtitle { color: #94a3b8; font-size: 14px; margin-bottom: 25px; }
 
-        /* Стиль для рекламного блоку */
         #ad-space { width: 100%; margin: 15px 0; min-height: 50px; }
 
         .category-title { font-size: 11px; text-transform: uppercase; color: #fbbf24; text-align: left; margin: 25px 0 10px 5px; letter-spacing: 1.5px; opacity: 0.8; }
 
-        .links-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+        .links-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
         
         .link-card { 
             background: #1e293b; border: 1px solid #334155; border-radius: 12px; 
-            padding: 16px; text-decoration: none; color: #fff; font-weight: 600;
+            padding: 14px 18px; text-decoration: none; color: #fff; font-weight: 500;
             display: flex; align-items: center; transition: 0.3s; text-align: left;
         }
         .link-card:hover { background: #334155; border-color: #fbbf24; transform: scale(1.02); }
-        .icon { font-size: 24px; margin-right: 15px; width: 30px; text-align: center; }
+        .icon { font-size: 20px; margin-right: 15px; width: 25px; text-align: center; }
         
-        .lottery { color: #fbbf24; }
-        .game { color: #4f46e5; }
+        .game-icon { color: #fbbf24; }
         .back-link { display: inline-block; margin-top: 30px; color: #94a3b8; text-decoration: none; font-size: 14px; padding: 10px 20px; border: 1px solid #334155; border-radius: 10px; }
     </style>
 </head>
@@ -43,8 +41,6 @@
         <button class="lang-btn" onclick="setLang('uk')">🇺🇦 UA</button>
         <button class="lang-btn" onclick="setLang('en')">🇺🇸 EN</button>
         <button class="lang-btn" onclick="setLang('pl')">🇵🇱 PL</button>
-        <button class="lang-btn" onclick="setLang('de')">🇩🇪 DE</button>
-        <button class="lang-btn" onclick="setLang('fr')">🇫🇷 FR</button>
     </div>
 
     <header>
@@ -55,65 +51,59 @@
     <div id="ad-space"></div>
 
     <div class="links-grid">
-        <div class="category-title" id="cat-lottery">Лотерея</div>
-        <a href="https://t.me/Anketkaua_bot" target="_blank" class="link-card">
-            <span class="icon lottery">🎟️</span> <span id="txt-lottery">UA Lottery (в боті)</span>
+        <div class="category-title" id="cat-main">Головні проекти</div>
+        <a href="http://t.me/Igrulbot_bot" target="_blank" class="link-card">
+            <span class="icon game-icon">💎</span> <span id="txt-golden">💎 Голден хаб</span>
         </a>
 
         <div class="category-title" id="cat-games">Наші ігри</div>
-        <a href="#" class="link-card">
-            <span class="icon game">🎯</span> <span id="txt-game-1">UA Clicker (Скоро)</span>
+        <a href="http://t.me/Tarasgra_bot" target="_blank" class="link-card">
+            <span class="icon game-icon">👨‍🌾</span> <span id="txt-taras">Тарас</span>
         </a>
-        <a href="#" class="link-card">
-            <span class="icon game">🎲</span> <span id="txt-game-2">UA Dice (У розробці)</span>
+        <a href="http://t.me/Brodilkaua_bot" target="_blank" class="link-card">
+            <span class="icon game-icon">🏃</span> <span id="txt-brodilka">Бродилка UA</span>
+        </a>
+        <a href="http://t.me/Uapay_bot" target="_blank" class="link-card">
+            <span class="icon game-icon">🖐️</span> <span id="txt-tapatka">Тапатка (UA Pay)</span>
+        </a>
+        <a href="http://t.me/Zsudonat_bot" target="_blank" class="link-card">
+            <span class="icon game-icon">🎖️</span> <span id="txt-tank">Танк ОУН (ЗСУ Донат)</span>
+        </a>
+
+        <div class="category-title" id="cat-lottery">Удача</div>
+        <a href="http://t.me/Zagadkiua_bot" target="_blank" class="link-card">
+            <span class="icon game-icon">🎟️</span> <span id="txt-lottery">Лотерея UA (Загадки)</span>
         </a>
     </div>
 
-    <a href="index.html" id="back-btn" class="back-link">← На головну</a>
+    <a href="index.html" id="back-btn" class="back-link">← Повернутися до Хабу</a>
 </div>
 
 <script>
     const translations = {
         uk: {
             title: "Розваги UA HUB", subtitle: "Грайте та вигравайте UA Token",
-            catLottery: "Лотерея", txtLottery: "UA Lottery (в боті)",
-            catGames: "Наші ігри", txtG1: "UA Clicker (Скоро)", txtG2: "UA Dice (У розробці)",
-            back: "← На головну"
+            catMain: "Головні проекти", catGames: "Наші ігри", catLottery: "Удача",
+            back: "← Повернутися до Хабу"
         },
         en: {
             title: "UA HUB Games", subtitle: "Play and win UA Token",
-            catLottery: "Lottery", txtLottery: "UA Lottery (in Bot)",
-            catGames: "Our Games", txtG1: "UA Clicker (Soon)", txtG2: "UA Dice (In Dev)",
-            back: "← To Main"
+            catMain: "Main Projects", catGames: "Our Games", catLottery: "Luck",
+            back: "← Back to HUB"
         },
         pl: {
             title: "Gry UA HUB", subtitle: "Graj i wygrywaj UA Token",
-            catLottery: "Loteria", txtLottery: "UA Lottery (w bocie)",
-            catGames: "Nasze gry", txtG1: "UA Clicker (Wkrótce)", txtG2: "UA Dice (W budowie)",
-            back: "← Do strony głównej"
-        },
-        de: {
-            title: "UA HUB Spiele", subtitle: "Spielen und UA Token gewinnen",
-            catLottery: "Lotterie", txtLottery: "UA Lottery (im Bot)",
-            catGames: "Unsere Spiele", txtG1: "UA Clicker (Bald)", txtG2: "UA Dice (In Entwicklung)",
-            back: "← Zur Startseite"
-        },
-        fr: {
-            title: "Jeux UA HUB", subtitle: "Jouez et gagnez des UA Token",
-            catLottery: "Loterie", txtLottery: "UA Lottery (en Bot)",
-            catGames: "Nos jeux", txtG1: "UA Clicker (Bientôt)", txtG2: "UA Dice (En dév)",
-            back: "← Accueil"
+            catMain: "Główne projekty", catGames: "Nasze gry", catLottery: "Szczęście",
+            back: "← Powrót do HUB"
         }
     };
 
     function setLang(lang) {
         document.getElementById('title').innerText = translations[lang].title;
         document.getElementById('subtitle').innerText = translations[lang].subtitle;
-        document.getElementById('cat-lottery').innerText = translations[lang].catLottery;
-        document.getElementById('txt-lottery').innerText = translations[lang].txtLottery;
+        document.getElementById('cat-main').innerText = translations[lang].catMain;
         document.getElementById('cat-games').innerText = translations[lang].catGames;
-        document.getElementById('txt-game-1').innerText = translations[lang].txtG1;
-        document.getElementById('txt-game-2').innerText = translations[lang].txtG2;
+        document.getElementById('cat-lottery').innerText = translations[lang].catLottery;
         document.getElementById('back-btn').innerText = translations[lang].back;
     }
 </script>
